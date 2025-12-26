@@ -57,18 +57,18 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer min-w-0" onClick={() => navigateTo('home')}>
+          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer min-w-0 flex-1" onClick={() => navigateTo('home')}>
             <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
               <Icons.CheckCircle2 size={20} strokeWidth={3} />
             </div>
-            {/* Optimized text size for mobile to prevent cut-off. Removed truncate to allow full visibility. */}
-            <span className="font-bold text-base sm:text-xl tracking-tight text-slate-900 leading-tight">
+            {/* Optimized text size for mobile (15px) to prevent cut-off on very small screens. */}
+            <span className="font-bold text-[15px] sm:text-xl tracking-tight text-slate-900 leading-tight min-w-0">
               Publish Perfect Pal
             </span>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
+          {/* Desktop Menu - Adjusted spacing for tablet (md) to space-x-4, larger on desktop */}
+          <div className="hidden md:flex space-x-4 lg:space-x-8 items-center flex-shrink-0">
             {navLinks.map((link) => (
               <button 
                 key={link.name} 
@@ -80,8 +80,8 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Buttons - Added ml-4 to ensure separation from FAQ on tablet */}
+          <div className="hidden md:flex items-center space-x-4 flex-shrink-0 ml-4 lg:ml-6">
             <button 
               onClick={() => handleNavClick('#pricing')}
               className="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap"
@@ -91,7 +91,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center ml-4">
+          <div className="md:hidden flex items-center ml-4 flex-shrink-0">
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-600 hover:text-slate-900 focus:outline-none p-2"

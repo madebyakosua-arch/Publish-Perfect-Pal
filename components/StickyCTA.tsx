@@ -47,9 +47,9 @@ export const StickyCTA: React.FC = () => {
 
           <button 
             onClick={scrollToBundle}
-            className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 sm:px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base whitespace-nowrap"
+            className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 sm:px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base whitespace-normal sm:whitespace-nowrap h-auto min-h-[3rem]"
           >
-            Get Full Access Bundle <Icons.ArrowRight size={18} />
+            Get Full Access Bundle <Icons.ArrowRight size={18} className="shrink-0" />
           </button>
         </div>
       </div>

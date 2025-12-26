@@ -28,11 +28,11 @@ export const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           {/* Text Content */}
-          <div className="max-w-2xl">
+          <div className="max-w-2xl w-full">
             
-            {/* Updated H1: leading-normal for better line spacing on mobile to avoid vertical clipping, break-words to avoid horizontal overflow */}
+            {/* Updated H1: Removed inline-block from span to allow natural text wrapping on small screens */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-normal sm:leading-tight mb-6 break-words hyphens-auto">
-              Make your book <span className="text-brand-500 inline-block">Amazon KDP</span> ready before you hit publish.
+              Make your book <span className="text-brand-500">Amazon KDP</span> ready before you hit publish.
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
               Publish Perfect Pal scans your manuscript and book cover, finds hidden issues, and shows you how to fix them so Amazon KDP doesn't reject your book.
@@ -53,26 +53,12 @@ export const Hero: React.FC = () => {
               ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full">
               <button 
                 onClick={scrollToPricing}
-                className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center flex items-center justify-center"
+                className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white px-6 sm:px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center flex items-center justify-center whitespace-normal h-auto min-h-[3.5rem]"
               >
                 Start Free Trial
-              </button>
-              <button 
-                onClick={() => {
-                  const el = document.getElementById('how-it-works');
-                  if (el) {
-                      const headerOffset = 80;
-                      const elementPosition = el.getBoundingClientRect().top;
-                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                  }
-                }}
-                className="w-full sm:w-auto group flex items-center justify-center gap-2 text-brand-600 font-bold text-lg px-8 py-4 hover:bg-brand-50 rounded-full transition-colors border border-transparent hover:border-brand-100"
-              >
-                See sample report <Icons.ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
             
@@ -90,7 +76,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Visual Mockup - CSS/HTML Constructed Dashboard */}
-          <div className="relative mt-8 lg:mt-0 max-w-full">
+          <div className="relative mt-8 lg:mt-0 w-full max-w-full">
              {/* Background Blob */}
              <div className="absolute top-0 -right-4 -left-4 sm:left-20 h-full bg-brand-100/50 rounded-full blur-3xl -z-10"></div>
              
