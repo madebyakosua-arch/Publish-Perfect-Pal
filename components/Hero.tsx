@@ -25,13 +25,15 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        {/* Changed from grid to flex-col on mobile to ensure robust block formatting context and prevent grid blowout */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           {/* Text Content */}
-          <div className="max-w-2xl w-full">
+          {/* Added min-w-0 here: This is critical for text wrapping on mobile */}
+          <div className="max-w-2xl w-full min-w-0">
             
-            {/* Updated H1: Removed inline-block to fix mobile cutoff. Restored size to 3xl for better impact. */}
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words">
+            {/* H1: Reduced to text-2xl on mobile, added max-w-full and break-words to ensure wrapping */}
+            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words hyphens-auto w-full max-w-full">
               Make your book <span className="text-brand-500">Amazon KDP</span> ready before you hit publish.
             </h1>
             <p className="text-base sm:text-xl text-slate-600 mb-8 leading-relaxed">
@@ -76,7 +78,8 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Visual Mockup - CSS/HTML Constructed Dashboard */}
-          <div className="relative mt-8 lg:mt-0 w-full max-w-full">
+          {/* Added min-w-0 here as well to prevent visual blowout */}
+          <div className="relative mt-8 lg:mt-0 w-full max-w-full min-w-0">
              {/* Background Blob */}
              <div className="absolute top-0 -right-4 -left-4 sm:left-20 h-full bg-brand-100/50 rounded-full blur-3xl -z-10"></div>
              
@@ -91,18 +94,20 @@ export const Hero: React.FC = () => {
                     <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                     <div className="w-3 h-3 rounded-full bg-green-400"></div>
                   </div>
-                  {/* Truncated for mock visual effect, not real navigation */}
-                  <div className="bg-white px-3 py-1 rounded text-xs text-slate-400 flex-1 text-center mx-2 sm:mx-4 font-mono truncate">
+                  {/* Truncated for mock visual effect. Added min-w-0 to ensure truncation works in flex container. */}
+                  <div className="bg-white px-3 py-1 rounded text-xs text-slate-400 flex-1 text-center mx-2 sm:mx-4 font-mono truncate min-w-0">
                     publishperfectpal.com/dashboard/scan
                   </div>
                 </div>
 
                 {/* Dashboard Body */}
-                <div className="p-4 sm:p-6 grid gap-4 sm:gap-6">
+                {/* Changed grid to flex-col for better mobile width handling */}
+                <div className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6">
                   {/* Status Header */}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-4 gap-2 sm:gap-0">
                     <div className="min-w-0 max-w-full">
-                      <h3 className="font-bold text-slate-800 text-lg truncate">My First Novel.pdf</h3>
+                      {/* Removed truncate, added break-words to ensure it wraps instead of getting cut off */}
+                      <h3 className="font-bold text-slate-800 text-lg break-words leading-tight">My First Novel.pdf</h3>
                       <p className="text-sm text-slate-500">Last scan: Just now</p>
                     </div>
                     <div className="px-3 py-1 bg-red-50 text-red-600 text-sm font-bold rounded-full border border-red-100 flex items-center gap-1 shrink-0">
@@ -151,17 +156,4 @@ export const Hero: React.FC = () => {
              {/* Floating Badge */}
              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce hidden lg:flex">
                <div className="bg-green-100 p-2 rounded-full text-green-600">
-                 <Icons.CheckCircle2 size={24} />
-               </div>
-               <div>
-                 <div className="text-sm font-bold text-slate-800">Ready for Amazon KDP</div>
-                 <div className="text-xs text-slate-500">Verification complete</div>
-               </div>
-             </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+                 <Icons.CheckCircle
