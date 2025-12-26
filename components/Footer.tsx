@@ -76,9 +76,12 @@ export const Footer: React.FC = () => {
                >
                  Publish Perfect Pal
                </div>
-               <p className="text-sm mb-4">© 2025 Publish Perfect Pal. All rights reserved.</p>
+               <p className="text-sm mb-4">
+                 © 2025 Publish Perfect Pal. <br/>
+                 Proudly created by <span className="text-slate-300 font-semibold">Made By Akosua</span>.
+               </p>
                <p className="text-xs text-slate-500 leading-relaxed">
-                 Disclaimer: Publish Perfect Pal is an independent software tool designed to assist self-publishers. We are not affiliated with, endorsed by, or associated with Amazon.com, Inc. or Kindle Direct Publishing (KDP).
+                 Disclaimer: Publish Perfect Pal is an independent software tool developed by Made By Akosua to assist self-publishers. We are not affiliated with, endorsed by, or associated with Amazon.com, Inc. or Kindle Direct Publishing (KDP).
                </p>
             </div>
             
@@ -90,8 +93,9 @@ export const Footer: React.FC = () => {
             </div>
           </div>
           
-          <div className="text-center text-xs text-slate-600 pt-8 border-t border-slate-800">
-            Made for self-published authors, by self-published authors.
+          <div className="text-center text-xs text-slate-600 pt-8 border-t border-slate-800 flex flex-col gap-1">
+            <p>Made for self-published authors, by self-published authors.</p>
+            <p>Publish Perfect Pal is a product of Made By Akosua.</p>
           </div>
         </div>
       </div>
