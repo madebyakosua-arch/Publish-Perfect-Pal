@@ -9,6 +9,21 @@ export const Navbar: React.FC = () => {
   // Replace this with your actual Stripe Trial Link
   const STRIPE_TRIAL_LINK = "REPLACE_WITH_STRIPE_TRIAL_LINK";
 
+  const scrollToElement = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      // Calculate offset to account for sticky navbar (approx 80px)
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     const id = href.replace('#', '');
@@ -18,24 +33,15 @@ export const Navbar: React.FC = () => {
       // Wait for navigation to home before scrolling. 
       // Increased timeout ensures DOM is ready after page switch.
       setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          // Retry once if element wasn't found immediately (slower devices)
-          setTimeout(() => {
-            const retryElement = document.getElementById(id);
-            if (retryElement) {
-              retryElement.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 300);
-        }
+        scrollToElement(id);
+        
+        // Retry logic for slower devices
+        setTimeout(() => {
+           scrollToElement(id);
+        }, 300);
       }, 100);
     } else {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToElement(id);
     }
   };
 

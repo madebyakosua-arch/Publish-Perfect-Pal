@@ -11,17 +11,17 @@ export const SocialProof: React.FC = () => {
             <p className="text-center text-slate-400 font-semibold uppercase tracking-wider text-xs mb-6">Fully compatible with all book formats</p>
             {/* Adjusted gap for mobile responsiveness */}
             <div className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-12">
-                <div className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-full border border-slate-100">
+                <div className="flex items-center gap-3 bg-slate-50 px-4 sm:px-6 py-3 rounded-full border border-slate-100">
                     <Icons.FileText className="text-brand-600 w-5 h-5 flex-shrink-0" />
-                    <span className="font-bold text-slate-700 whitespace-nowrap">Paperback PDF</span>
+                    <span className="font-bold text-slate-700 whitespace-nowrap text-sm sm:text-base">Paperback PDF</span>
                 </div>
-                <div className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-full border border-slate-100">
+                <div className="flex items-center gap-3 bg-slate-50 px-4 sm:px-6 py-3 rounded-full border border-slate-100">
                     <Icons.FileText className="text-brand-600 w-5 h-5 flex-shrink-0" />
-                    <span className="font-bold text-slate-700 whitespace-nowrap">Hardback PDF</span>
+                    <span className="font-bold text-slate-700 whitespace-nowrap text-sm sm:text-base">Hardback PDF</span>
                 </div>
-                <div className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-full border border-slate-100">
+                <div className="flex items-center gap-3 bg-slate-50 px-4 sm:px-6 py-3 rounded-full border border-slate-100">
                     <Icons.Image className="text-brand-600 w-5 h-5 flex-shrink-0" />
-                    <span className="font-bold text-slate-700 whitespace-nowrap">Kindle eBooks</span>
+                    <span className="font-bold text-slate-700 whitespace-nowrap text-sm sm:text-base">Kindle eBooks</span>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
   const { navigateTo } = useNavigation();
 
   return (
-    <footer className="bg-slate-900 text-slate-400 border-t border-slate-800">
+    <footer className="bg-slate-900 text-slate-400 border-t border-slate-800 pb-28 md:pb-0">
       
       {/* Core Values Section */}
       <div className="border-b border-slate-800 bg-slate-950/30">

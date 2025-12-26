@@ -11,7 +11,14 @@ export const Hero: React.FC = () => {
   const scrollToPricing = () => {
     const element = document.getElementById('pricing');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Manual scroll calculation due to Sticky Header handled in Navbar, duplicating simple version here or using ID
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -55,7 +62,12 @@ export const Hero: React.FC = () => {
               <button 
                 onClick={() => {
                   const el = document.getElementById('how-it-works');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  if (el) {
+                      const headerOffset = 80;
+                      const elementPosition = el.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                  }
                 }}
                 className="group flex items-center justify-center gap-2 text-brand-600 font-bold text-lg px-8 py-4 hover:bg-brand-50 rounded-full transition-colors"
               >
@@ -122,8 +134,8 @@ export const Hero: React.FC = () => {
                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </div>
                         
-                        {/* Error Tooltip - Fixed positioning for mobile */}
-                        <div className="absolute top-10 right-2 sm:right-0 transform sm:translate-x-4 bg-slate-900 text-white text-xs p-2 rounded shadow-lg z-10 w-28 sm:w-32">
+                        {/* Error Tooltip - Fixed positioning for mobile to stay inside container */}
+                        <div className="absolute top-10 right-2 bg-slate-900 text-white text-xs p-2 rounded shadow-lg z-10 w-28 sm:w-32">
                           <span className="font-bold block text-red-400 mb-1">Margin Error</span>
                           Text is too close to the trim line.
                         </div>
