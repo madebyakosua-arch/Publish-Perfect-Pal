@@ -89,17 +89,10 @@ export const ThankYou: React.FC = () => {
               <Icons.Quote size={180} className="text-brand-900" />
            </div>
 
-           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-              <div className="shrink-0">
-                 {/* Initials Avatar */}
-                 <div className="w-20 h-20 rounded-full bg-brand-50 border-4 border-white shadow-md flex items-center justify-center text-brand-600 text-2xl font-bold mx-auto md:mx-0">
-                    SJ
-                 </div>
-              </div>
-              
-              <div className="flex-1">
+           <div className="relative z-10 flex flex-col items-center text-center">
+              <div className="max-w-3xl mx-auto">
                  {/* Star Rating */}
-                 <div className="flex items-center justify-center md:justify-start gap-1 text-yellow-400 mb-4">
+                 <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Icons.Star key={star} size={20} fill="currentColor" className="text-yellow-400" />
                     ))}
