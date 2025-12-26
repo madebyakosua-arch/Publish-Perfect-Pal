@@ -30,9 +30,9 @@ export const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="max-w-2xl w-full">
             
-            {/* Updated H1: Reduced mobile font size to text-2xl/3xl to prevent cut-off on narrow screens */}
-            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words hyphens-auto">
-              Make your book <span className="text-brand-500 inline-block">Amazon KDP</span> ready before you hit publish.
+            {/* Updated H1: Removed inline-block to fix mobile cutoff. Restored size to 3xl for better impact. */}
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words">
+              Make your book <span className="text-brand-500">Amazon KDP</span> ready before you hit publish.
             </h1>
             <p className="text-base sm:text-xl text-slate-600 mb-8 leading-relaxed">
               Publish Perfect Pal scans your manuscript and book cover, finds hidden issues, and shows you how to fix them so Amazon KDP doesn't reject your book.
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full">
               <button 
                 onClick={scrollToPricing}
-                className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center flex items-center justify-center whitespace-normal h-auto min-h-[3rem]"
+                className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center flex items-center justify-center whitespace-normal h-auto min-h-[3.5rem]"
               >
                 Start Free Trial
               </button>
