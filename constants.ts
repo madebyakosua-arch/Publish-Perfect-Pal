@@ -69,7 +69,7 @@ export const FEATURES: FeatureItem[] = [
 export const FAQS: FaqItem[] = [
   {
     id: 1,
-    question: "Is Publish Perfect Pal only for KDP?",
+    question: "Is Publish Perfect Pal only for Amazon KDP?",
     answer: "While we are laser-focused on Amazon KDP standards, our formatting checks are extremely helpful for IngramSpark, Draft2Digital, and other print-on-demand platforms that share similar requirements."
   },
   {

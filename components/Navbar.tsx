@@ -15,11 +15,20 @@ export const Navbar: React.FC = () => {
     
     if (currentPage !== 'home') {
       navigateTo('home');
-      // Wait for navigation to home before scrolling
+      // Wait for navigation to home before scrolling. 
+      // Increased timeout ensures DOM is ready after page switch.
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // Retry once if element wasn't found immediately (slower devices)
+          setTimeout(() => {
+            const retryElement = document.getElementById(id);
+            if (retryElement) {
+              retryElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 300);
         }
       }, 100);
     } else {
