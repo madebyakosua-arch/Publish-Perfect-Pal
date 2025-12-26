@@ -156,4 +156,17 @@ export const Hero: React.FC = () => {
              {/* Floating Badge */}
              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce hidden lg:flex">
                <div className="bg-green-100 p-2 rounded-full text-green-600">
-                 <Icons.CheckCircle
+                 <Icons.CheckCircle2 size={24} />
+               </div>
+               <div>
+                 <div className="font-bold text-slate-900 text-sm">Amazon KDP Ready</div>
+                 <div className="text-xs text-slate-500">Approved in 2 mins</div>
+               </div>
+             </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
