@@ -9,7 +9,7 @@ export const LeadCapture: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   // UPDATE THIS CODE WHEN YOU CREATE IT
-  const COUPON_CODE = "10FIRSTMONTHPPP"; 
+  const COUPON_CODE = "10DISCOUNTPPP"; 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
