@@ -81,48 +81,40 @@ export const ThankYou: React.FC = () => {
         </div>
       </div>
 
-      {/* Values Section */}
-      <div className="max-w-6xl w-full mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-slate-400 font-bold uppercase tracking-widest text-sm">Our Promise To You</h2>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Value 1 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:border-brand-200 transition-colors">
-            <div className="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center mb-4 text-brand-600">
-              <Icons.Star size={24} />
-            </div>
-            <h3 className="font-bold text-slate-900 mb-1">Customer First</h3>
-            <p className="text-sm text-slate-600">Your success is our priority</p>
-          </div>
+      {/* Featured Testimonial Section (Replaces Values) */}
+      <div className="max-w-4xl w-full mx-auto mb-16 px-4">
+        <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-8 md:p-12 relative overflow-hidden">
+           {/* Quote Icon Background Watermark */}
+           <div className="absolute top-0 right-0 p-8 opacity-5 transform translate-x-4 -translate-y-4">
+              <Icons.Quote size={180} className="text-brand-900" />
+           </div>
 
-          {/* Value 2 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:border-brand-200 transition-colors">
-            <div className="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center mb-4 text-brand-600">
-              <Icons.ShieldCheck size={24} />
-            </div>
-            <h3 className="font-bold text-slate-900 mb-1">Integrity</h3>
-            <p className="text-sm text-slate-600">Honest in everything we do</p>
-          </div>
-
-          {/* Value 3 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:border-brand-200 transition-colors">
-            <div className="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center mb-4 text-brand-600">
-              <Icons.Eye size={24} />
-            </div>
-            <h3 className="font-bold text-slate-900 mb-1">Transparency</h3>
-            <p className="text-sm text-slate-600">No fine print or secrets</p>
-          </div>
-
-          {/* Value 4 */}
-          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:border-brand-200 transition-colors">
-            <div className="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center mb-4 text-brand-600">
-              <Icons.CheckCircle2 size={24} />
-            </div>
-            <h3 className="font-bold text-slate-900 mb-1">Professionalism</h3>
-            <p className="text-sm text-slate-600">Excellence in every detail</p>
-          </div>
+           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
+              <div className="shrink-0">
+                 {/* Initials Avatar */}
+                 <div className="w-20 h-20 rounded-full bg-brand-50 border-4 border-white shadow-md flex items-center justify-center text-brand-600 text-2xl font-bold mx-auto md:mx-0">
+                    SJ
+                 </div>
+              </div>
+              
+              <div className="flex-1">
+                 {/* Star Rating */}
+                 <div className="flex items-center justify-center md:justify-start gap-1 text-yellow-400 mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Icons.Star key={star} size={20} fill="currentColor" className="text-yellow-400" />
+                    ))}
+                 </div>
+                 
+                 <blockquote className="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed mb-6 font-serif italic">
+                   "I wish I had Publish Perfect Pal when I started my self-publishing journey. It would have saved me weeks of frustration deciphering Amazon's error codes. Now, I can publish with total confidence."
+                 </blockquote>
+                 
+                 <div>
+                    <div className="font-bold text-slate-900 text-lg">Sarah Jenkins</div>
+                    <div className="text-slate-500 text-sm">Indie Author & Self-Publisher</div>
+                 </div>
+              </div>
+           </div>
         </div>
       </div>
     </div>

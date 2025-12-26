@@ -16,7 +16,8 @@ import {
   ChevronDown,
   ArrowRight,
   AlertTriangle,
-  Check
+  Check,
+  Quote
 } from 'lucide-react';
 
 export const Icons = {
@@ -36,5 +37,6 @@ export const Icons = {
   ChevronDown,
   ArrowRight,
   AlertTriangle,
-  Check
+  Check,
+  Quote
 };
