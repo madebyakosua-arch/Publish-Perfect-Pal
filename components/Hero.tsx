@@ -30,11 +30,11 @@ export const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="max-w-2xl w-full">
             
-            {/* Updated H1: Removed inline-block from span to allow natural text wrapping on small screens */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-normal sm:leading-tight mb-6 break-words hyphens-auto">
-              Make your book <span className="text-brand-500">Amazon KDP</span> ready before you hit publish.
+            {/* Updated H1: Reduced mobile font size to text-2xl/3xl to prevent cut-off on narrow screens */}
+            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words hyphens-auto">
+              Make your book <span className="text-brand-500 inline-block">Amazon KDP</span> ready before you hit publish.
             </h1>
-            <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-xl text-slate-600 mb-8 leading-relaxed">
               Publish Perfect Pal scans your manuscript and book cover, finds hidden issues, and shows you how to fix them so Amazon KDP doesn't reject your book.
             </p>
             
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-0.5 mr-3">
                     <Icons.Check size={14} className="text-green-600" strokeWidth={3} />
                   </div>
-                  <span className="text-slate-700 font-medium">{item}</span>
+                  <span className="text-slate-700 font-medium text-sm sm:text-base">{item}</span>
                 </li>
               ))}
             </ul>
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full">
               <button 
                 onClick={scrollToPricing}
-                className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white px-6 sm:px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center flex items-center justify-center whitespace-normal h-auto min-h-[3.5rem]"
+                className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center flex items-center justify-center whitespace-normal h-auto min-h-[3rem]"
               >
                 Start Free Trial
               </button>
@@ -67,10 +67,10 @@ export const Hero: React.FC = () => {
               <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-3">Compatible with</p>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                  {/* Styled text to look more like logos */}
-                 <div className="text-slate-800 font-serif font-black text-xl tracking-tighter">Kindle<span className="font-light">Direct</span></div>
-                 <div className="text-slate-800 font-sans font-bold text-lg italic">IngramSpark</div>
-                 <div className="text-slate-800 font-serif font-bold text-xl tracking-widest">Lulu</div>
-                 <div className="text-slate-800 font-mono font-bold text-lg">Draft2Digital</div>
+                 <div className="text-slate-800 font-serif font-black text-lg sm:text-xl tracking-tighter">Kindle<span className="font-light">Direct</span></div>
+                 <div className="text-slate-800 font-sans font-bold text-base sm:text-lg italic">IngramSpark</div>
+                 <div className="text-slate-800 font-serif font-bold text-lg sm:text-xl tracking-widest">Lulu</div>
+                 <div className="text-slate-800 font-mono font-bold text-base sm:text-lg">Draft2Digital</div>
               </div>
             </div>
           </div>
