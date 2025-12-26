@@ -35,19 +35,19 @@ export const ThankYou: React.FC = () => {
                    <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
                       <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
                    </div>
-                   <span className="font-bold text-slate-800 text-lg">Account upgraded successfully</span>
+                   <span className="font-bold text-slate-800 text-lg">Catch issues before you publish on Amazon KDP</span>
                 </li>
                 <li className="flex items-center gap-4">
                    <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
                       <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
                    </div>
-                   <span className="font-bold text-slate-800 text-lg">Instant access to Scan Engine</span>
+                   <span className="font-bold text-slate-800 text-lg">Publish faster with confidence</span>
                 </li>
                 <li className="flex items-center gap-4">
                    <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
                       <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
                    </div>
-                   <span className="font-bold text-slate-800 text-lg">Priority Support Enabled</span>
+                   <span className="font-bold text-slate-800 text-lg">Confidently publish books that meet professional quality expectations</span>
                 </li>
              </ul>
           </div>
