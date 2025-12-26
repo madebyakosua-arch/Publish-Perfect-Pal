@@ -8,7 +8,7 @@ export const Pricing: React.FC = () => {
 
   // Define your Stripe Links here
   const LINKS = {
-    TRIAL: "https://buy.stripe.com/5kQ4gzb2pbHSceH3i7cAo00",
+    TRIAL: "https://buy.stripe.com/6oU3cv8Uh27i3IbcSHcAo06",
     PRO_MONTHLY: "https://buy.stripe.com/14A14n9YlfY86UncSHcAo04",
     PRO_YEARLY: "https://buy.stripe.com/aFa3cvc6taDO2E7bODcAo02",
     LIFETIME: "https://buy.stripe.com/00w5kD1rP9zK3Ib6ujcAo05"
