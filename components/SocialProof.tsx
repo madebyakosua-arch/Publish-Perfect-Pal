@@ -3,7 +3,7 @@ import { Icons } from './Icons';
 
 export const SocialProof: React.FC = () => {
   return (
-    <section className="py-12 border-b border-slate-100 bg-white">
+    <section className="py-20 border-b border-slate-100 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Supported Formats Strip - Builds trust without fake stats */}

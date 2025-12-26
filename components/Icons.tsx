@@ -20,7 +20,9 @@ import {
   Check,
   Quote,
   User,
-  Zap
+  Zap,
+  CreditCard,
+  Landmark
 } from 'lucide-react';
 
 export const Icons = {
@@ -44,5 +46,7 @@ export const Icons = {
   Check,
   Quote,
   User,
-  Zap
+  Zap,
+  CreditCard,
+  Landmark
 };

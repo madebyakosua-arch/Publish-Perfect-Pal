@@ -79,7 +79,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     id: 3,
-    question: "What happens after my trial ends?",
+    question: "What happens after my free trial ends?",
     answer: "You can choose to upgrade to a Pro plan to keep scanning, or your account will pause. We keep your data safe in case you want to come back later."
   },
   {

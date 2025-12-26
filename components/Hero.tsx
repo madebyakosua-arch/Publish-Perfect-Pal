@@ -77,13 +77,13 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Visual Mockup - CSS/HTML Constructed Dashboard */}
-          <div className="relative mt-8 lg:mt-0">
+          <div className="relative mt-8 lg:mt-0 max-w-full">
              {/* Background Blob */}
              <div className="absolute top-0 -right-4 -left-4 sm:left-20 h-full bg-brand-100/50 rounded-full blur-3xl -z-10"></div>
              
              {/* Dashboard Container */}
              {/* Changed: Rotate only on large screens (lg:rotate-1) to prevent mobile overflow */}
-             <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform lg:rotate-1 transition-transform duration-500 hover:rotate-0">
+             <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform lg:rotate-1 transition-transform duration-500 hover:rotate-0 w-full">
                 
                 {/* Mock Browser Header */}
                 <div className="bg-slate-100 px-4 py-3 border-b border-slate-200 flex items-center gap-2">
@@ -122,8 +122,8 @@ export const Hero: React.FC = () => {
                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </div>
                         
-                        {/* Error Tooltip */}
-                        <div className="absolute top-10 right-0 transform translate-x-2 sm:translate-x-4 bg-slate-900 text-white text-xs p-2 rounded shadow-lg z-10 w-28 sm:w-32">
+                        {/* Error Tooltip - Fixed positioning for mobile */}
+                        <div className="absolute top-10 right-2 sm:right-0 transform sm:translate-x-4 bg-slate-900 text-white text-xs p-2 rounded shadow-lg z-10 w-28 sm:w-32">
                           <span className="font-bold block text-red-400 mb-1">Margin Error</span>
                           Text is too close to the trim line.
                         </div>

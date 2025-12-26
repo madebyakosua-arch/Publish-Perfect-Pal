@@ -148,7 +148,7 @@ export const Pricing: React.FC = () => {
           </div>
 
           {/* Card 3: Lifetime (Scarcity Added - Brand Match) */}
-          <div className="bg-slate-900 rounded-2xl p-6 sm:p-8 border border-brand-500/50 shadow-md text-white relative overflow-hidden group">
+          <div id="lifetime-bundle" className="bg-slate-900 rounded-2xl p-6 sm:p-8 border border-brand-500/50 shadow-md text-white relative overflow-hidden group">
             {/* Scarcity Watermark/Glow - Orange */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-500/10 blur-3xl rounded-full pointer-events-none"></div>
 
@@ -159,7 +159,7 @@ export const Pricing: React.FC = () => {
                </span>
             </div>
 
-            <h3 className="font-bold text-xl text-white mb-2">Full Access Bundle</h3>
+            <h3 className="font-bold text-xl text-white mb-2">Lifetime Access Bundle</h3>
             <div className="text-3xl font-extrabold text-white mb-2">$197 <span className="text-sm font-normal text-slate-400">one time</span></div>
             
             {/* SAVINGS CALCULATION (Moved Above Countdown) */}
@@ -242,6 +242,34 @@ export const Pricing: React.FC = () => {
             <Icons.ShieldCheck className="text-brand-500" size={18} />
             Secure payment via Stripe • Cancel anytime • No hidden fees
           </p>
+          
+          {/* Payment Logos */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-300 pt-4">
+            
+            {/* Stripe Logo (Added) */}
+            <div className="font-bold text-2xl tracking-tighter text-[#635BFF] flex items-center pr-2" title="Stripe">
+              stripe
+            </div>
+
+            {/* Amazon Pay Logo */}
+            <div className="flex flex-col relative h-8 justify-center" title="Amazon Pay">
+              <span className="font-bold text-slate-800 text-xl leading-none tracking-tight">amazon<span className="text-brand-500">pay</span></span>
+              {/* Smile arrow */}
+              <svg className="absolute -bottom-1 left-0 w-full h-3 text-brand-500" viewBox="0 0 100 20" fill="currentColor">
+                  <path d="M10,5 Q50,20 90,5" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <path d="M85,5 L90,5 L88,10 Z" fill="currentColor" />
+              </svg>
+            </div>
+
+            {/* Apple Pay Logo */}
+            <div className="flex items-center gap-1 font-semibold text-slate-800 text-lg" title="Apple Pay">
+              <svg className="h-6 w-5 fill-current" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-22.1-73.3-64.8-68.3-91.9zm-48.9-153.2c5.6-27.3 37.8-54.7 50.8-54.7 6.2 3.3 13.2 2.7 13.2 2.7-3.4 26.9-23.6 53.6-50.7 54.8-5.1-.2-10-.6-13.3-2.8z"/>
+              </svg>
+              <span>Pay</span>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
