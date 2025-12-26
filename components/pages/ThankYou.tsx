@@ -23,13 +23,34 @@ export const ThankYou: React.FC = () => {
         {/* Body Section */}
         <div className="p-8 md:p-12">
           
+          {/* Benefits List */}
+          <div className="flex flex-col items-center gap-4 mb-10">
+            <div className="flex items-center gap-3 bg-green-50 px-6 py-3 rounded-full border border-green-100">
+              <div className="bg-green-100 p-1 rounded-full">
+                 <Icons.CheckCircle2 className="text-green-600 w-5 h-5" />
+              </div>
+              <span className="font-bold text-green-800 text-lg">Account upgraded successfully</span>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-2">
+              <div className="flex items-center gap-2 text-slate-700 font-medium">
+                <Icons.Check className="text-brand-500 w-5 h-5" />
+                <span>Instant access to Scan Engine</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-700 font-medium">
+                <Icons.Check className="text-brand-500 w-5 h-5" />
+                <span>Priority Support Enabled</span>
+              </div>
+            </div>
+          </div>
+
           {/* Action Button */}
           <div className="mb-10">
             <a 
               href="https://www.publishperfectpal.online"
               className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
-              Go to App Dashboard <Icons.ArrowRight size={20} />
+              Access Publish Perfect Pal <Icons.ArrowRight size={20} />
             </a>
             <p className="mt-3 text-xs text-slate-400">
               Click above to access your account immediately
@@ -39,10 +60,10 @@ export const ThankYou: React.FC = () => {
           {/* Support Section */}
           <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 max-w-xl mx-auto">
             <h3 className="text-lg font-bold text-slate-900 mb-2">
-              Need support at any time?
+              Need support?
             </h3>
             <p className="text-slate-600 mb-4">
-              Contact us at: <a href="mailto:hello@madebyakosua.com" className="text-brand-600 font-bold hover:underline">hello@madebyakosua.com</a>
+              If you need support at any time, please contact us at: <a href="mailto:hello@madebyakosua.com" className="text-brand-600 font-bold hover:underline">hello@madebyakosua.com</a>
             </p>
             <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
               <Icons.Clock size={16} className="text-brand-500" />
