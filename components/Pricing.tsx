@@ -56,16 +56,16 @@ export const Pricing: React.FC = () => {
           </p>
 
           {/* Toggle Switch */}
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <span className={`text-sm font-medium ${!isAnnual ? 'text-slate-900' : 'text-slate-500'}`}>Monthly</span>
             <button 
               onClick={() => setIsAnnual(!isAnnual)}
-              className="relative w-14 h-8 bg-brand-500 rounded-full p-1 transition-colors focus:outline-none"
+              className="relative w-14 h-8 bg-brand-500 rounded-full p-1 transition-colors focus:outline-none flex-shrink-0"
             >
               <div className={`w-6 h-6 bg-white rounded-full shadow-sm transform transition-transform ${isAnnual ? 'translate-x-6' : 'translate-x-0'}`}></div>
             </button>
             <span className={`text-sm font-medium ${isAnnual ? 'text-slate-900' : 'text-slate-500'}`}>
-              Yearly <span className="text-brand-600 font-bold text-xs ml-1">(Save $40)</span>
+              Yearly <span className="text-brand-600 font-bold text-xs ml-1 whitespace-nowrap">(Save $40)</span>
             </span>
           </div>
         </div>
@@ -152,18 +152,18 @@ export const Pricing: React.FC = () => {
             {/* Scarcity Watermark/Glow - Orange */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-500/10 blur-3xl rounded-full pointer-events-none"></div>
 
-            {/* Savings Ribbon - Orange */}
-            <div className="absolute top-5 right-5">
-               <span className="bg-brand-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">
+            {/* Title and Badge Container - Flexbox for responsiveness */}
+            <div className="flex justify-between items-start gap-2 mb-2 relative z-10">
+               <h3 className="font-bold text-xl text-white">Lifetime Access Bundle</h3>
+               <span className="bg-brand-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse whitespace-nowrap shrink-0 mt-1">
                  Limited Time
                </span>
             </div>
 
-            <h3 className="font-bold text-xl text-white mb-2">Lifetime Access Bundle</h3>
-            <div className="text-3xl font-extrabold text-white mb-2">$197 <span className="text-sm font-normal text-slate-400">one time</span></div>
+            <div className="text-3xl font-extrabold text-white mb-2 relative z-10">$197 <span className="text-sm font-normal text-slate-400">one time</span></div>
             
             {/* SAVINGS CALCULATION (Moved Above Countdown) */}
-            <div className="bg-white/10 rounded-lg p-3 mb-4 border border-white/10">
+            <div className="bg-white/10 rounded-lg p-3 mb-4 border border-white/10 relative z-10">
               <div className="text-sm font-medium text-green-400 flex items-center gap-1 mb-1">
                 <Icons.CheckCircle2 size={14} />
                 Pays for itself in 10 months!
@@ -174,7 +174,7 @@ export const Pricing: React.FC = () => {
             </div>
 
             {/* SCARCITY COUNTER (Fixed to 10 spots as requested) */}
-            <div className="bg-slate-800/50 rounded-lg p-3 mb-6 border border-brand-500/30">
+            <div className="bg-slate-800/50 rounded-lg p-3 mb-6 border border-brand-500/30 relative z-10">
                <div className="flex justify-between items-center mb-1.5">
                   <span className="text-xs font-bold text-brand-200 uppercase tracking-wide flex items-center gap-1.5">
                     <Icons.Zap size={12} className="text-brand-400 fill-brand-400" /> 
@@ -199,11 +199,11 @@ export const Pricing: React.FC = () => {
 
             <a 
               href={LINKS.LIFETIME}
-              className="block w-full text-center bg-white hover:bg-brand-50 text-brand-600 font-bold py-3 rounded-lg mb-6 transition-colors border border-transparent hover:border-brand-200"
+              className="block w-full text-center bg-white hover:bg-brand-50 text-brand-600 font-bold py-3 rounded-lg mb-6 transition-colors border border-transparent hover:border-brand-200 relative z-10"
             >
               Get lifetime access
             </a>
-            <ul className="space-y-3">
+            <ul className="space-y-3 relative z-10">
               {[
                 "Unlimited Paperback, Hardback & Kindle scans",
                 "All current & future Pro features",
@@ -221,7 +221,7 @@ export const Pricing: React.FC = () => {
             </ul>
 
             {/* Money Back Guarantee */}
-            <div className="mt-8 pt-6 border-t border-slate-700 flex items-start gap-3">
+            <div className="mt-8 pt-6 border-t border-slate-700 flex items-start gap-3 relative z-10">
               <div className="bg-brand-500/20 p-2 rounded-lg text-brand-400 shrink-0">
                 <Icons.ShieldCheck size={20} />
               </div>

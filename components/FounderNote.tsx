@@ -16,7 +16,7 @@ export const FounderNote: React.FC = () => {
           </p>
 
           {/* Inline Email Replica */}
-          <div className="my-8 transform hover:scale-[1.02] transition-transform duration-500">
+          <div className="my-8 md:transform md:hover:scale-[1.02] transition-transform duration-500">
              <div className="relative bg-white rounded-lg shadow-xl border border-slate-200 overflow-hidden w-full max-w-xl mx-auto">
                 {/* Email Header */}
                 <div className="border-b border-slate-100 p-4 bg-slate-50 flex items-center gap-3">
@@ -30,7 +30,7 @@ export const FounderNote: React.FC = () => {
                 </div>
 
                 {/* Email Body */}
-                <div className="p-6 sm:p-8 font-sans text-slate-800 text-base">
+                <div className="p-4 sm:p-8 font-sans text-slate-800 text-base">
                    <div className="mb-6">
                       <span className="text-2xl font-bold tracking-tighter block">amazon</span>
                    </div>

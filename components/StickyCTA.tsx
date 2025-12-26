@@ -40,16 +40,16 @@ export const StickyCTA: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
           
           {/* Guarantee Badge - Now visible on mobile */}
-          <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full border border-green-100 shadow-sm flex-wrap text-center leading-tight">
+          <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full border border-green-100 shadow-sm flex-wrap text-center leading-tight w-full sm:w-auto">
             <Icons.ShieldCheck size={14} className="text-green-600 flex-shrink-0" />
             <span>7-Day Guarantee <span className="opacity-75 inline-block sm:inline">(Full Access Bundle)</span></span>
           </div>
 
           <button 
             onClick={scrollToBundle}
-            className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base"
+            className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 sm:px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base whitespace-nowrap"
           >
-            Get Our Full Access Bundle <Icons.ArrowRight size={18} />
+            Get Full Access Bundle <Icons.ArrowRight size={18} />
           </button>
         </div>
       </div>

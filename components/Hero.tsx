@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="max-w-2xl">
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words">
               Make your book <span className="text-brand-500">Amazon KDP</span> ready before you hit publish.
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button 
                 onClick={scrollToPricing}
-                className="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center inline-block"
+                className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center flex items-center justify-center"
               >
                 Start Free Trial
               </button>
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
                       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                   }
                 }}
-                className="group flex items-center justify-center gap-2 text-brand-600 font-bold text-lg px-8 py-4 hover:bg-brand-50 rounded-full transition-colors"
+                className="w-full sm:w-auto group flex items-center justify-center gap-2 text-brand-600 font-bold text-lg px-8 py-4 hover:bg-brand-50 rounded-full transition-colors border border-transparent hover:border-brand-100"
               >
                 See sample report <Icons.ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -113,7 +113,7 @@ export const Hero: React.FC = () => {
                 <div className="p-4 sm:p-6 grid gap-4 sm:gap-6">
                   {/* Status Header */}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-4 gap-2 sm:gap-0">
-                    <div className="min-w-0">
+                    <div className="min-w-0 max-w-full">
                       <h3 className="font-bold text-slate-800 text-lg truncate">My First Novel.pdf</h3>
                       <p className="text-sm text-slate-500">Last scan: Just now</p>
                     </div>
