@@ -30,8 +30,9 @@ export const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="max-w-2xl">
             
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words">
-              Make your book <span className="text-brand-500">Amazon KDP</span> ready before you hit publish.
+            {/* Updated H1: leading-normal for better line spacing on mobile to avoid vertical clipping, break-words to avoid horizontal overflow */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-normal sm:leading-tight mb-6 break-words hyphens-auto">
+              Make your book <span className="text-brand-500 inline-block">Amazon KDP</span> ready before you hit publish.
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
               Publish Perfect Pal scans your manuscript and book cover, finds hidden issues, and shows you how to fix them so Amazon KDP doesn't reject your book.
@@ -104,6 +105,7 @@ export const Hero: React.FC = () => {
                     <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                     <div className="w-3 h-3 rounded-full bg-green-400"></div>
                   </div>
+                  {/* Truncated for mock visual effect, not real navigation */}
                   <div className="bg-white px-3 py-1 rounded text-xs text-slate-400 flex-1 text-center mx-2 sm:mx-4 font-mono truncate">
                     publishperfectpal.com/dashboard/scan
                   </div>

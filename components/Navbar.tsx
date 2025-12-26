@@ -61,8 +61,8 @@ export const Navbar: React.FC = () => {
             <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
               <Icons.CheckCircle2 size={20} strokeWidth={3} />
             </div>
-            {/* Optimized text size for mobile to prevent cut-off */}
-            <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-900 truncate sm:whitespace-nowrap">
+            {/* Optimized text size for mobile to prevent cut-off. Removed truncate to allow full visibility. */}
+            <span className="font-bold text-base sm:text-xl tracking-tight text-slate-900 leading-tight">
               Publish Perfect Pal
             </span>
           </div>
