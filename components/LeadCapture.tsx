@@ -100,15 +100,16 @@ export const LeadCapture: React.FC = () => {
       {/* Coupon Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm transition-all animate-in fade-in duration-200">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative transform scale-100 transition-all">
+          {/* Added max-h and overflow for landscape mobile support */}
+          <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 shadow-2xl relative transform scale-100 transition-all max-h-[90vh] overflow-y-auto">
             <button 
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors bg-slate-50 p-1 rounded-full hover:bg-slate-100"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors bg-slate-50 p-1 rounded-full hover:bg-slate-100 sticky z-10"
             >
               <Icons.X size={20} />
             </button>
             
-            <div className="text-center">
+            <div className="text-center mt-2">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icons.CheckCircle2 className="text-green-600 w-8 h-8" strokeWidth={3} />
               </div>

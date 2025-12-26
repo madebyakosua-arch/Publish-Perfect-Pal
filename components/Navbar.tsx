@@ -51,11 +51,14 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => navigateTo('home')}>
-            <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white">
+          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer min-w-0" onClick={() => navigateTo('home')}>
+            <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
               <Icons.CheckCircle2 size={20} strokeWidth={3} />
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900">Publish Perfect Pal</span>
+            {/* Optimized text size for mobile to prevent cut-off */}
+            <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-900 truncate">
+              Publish Perfect Pal
+            </span>
           </div>
 
           {/* Desktop Menu */}
@@ -64,7 +67,7 @@ export const Navbar: React.FC = () => {
               <button 
                 key={link.name} 
                 onClick={() => handleNavClick(link.href)}
-                className="text-slate-600 hover:text-brand-600 font-medium transition-colors text-sm"
+                className="text-slate-600 hover:text-brand-600 font-medium transition-colors text-sm whitespace-nowrap"
               >
                 {link.name}
               </button>
@@ -75,17 +78,18 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button 
               onClick={() => handleNavClick('#pricing')}
-              className="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap"
             >
               Start Free Trial
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center ml-4">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-slate-900 focus:outline-none"
+              className="text-slate-600 hover:text-slate-900 focus:outline-none p-2"
+              aria-label="Toggle menu"
             >
               {isOpen ? <Icons.X size={24} /> : <Icons.Menu size={24} />}
             </button>
@@ -95,7 +99,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-slate-100 shadow-lg">
+        <div className="md:hidden bg-white border-b border-slate-100 shadow-lg max-h-[85vh] overflow-y-auto">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
               <button

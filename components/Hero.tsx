@@ -22,11 +22,12 @@ export const Hero: React.FC = () => {
           
           {/* Text Content */}
           <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 break-words">
               Make your book <span className="text-brand-500">Amazon KDP</span> ready before you hit publish.
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
-              Publish Perfect Pal scans your manuscript and cover, finds hidden issues, and shows you how to fix them before Amazon KDP rejects your book.
+              Publish Perfect Pal scans your manuscript and book cover, finds hidden issues, and shows you how to fix them so Amazon KDP doesn't reject your book.
             </p>
             
             <ul className="space-y-4 mb-8">
@@ -64,52 +65,53 @@ export const Hero: React.FC = () => {
             
             {/* Trust/Authority Strip - Improves Conversion */}
             <div className="border-t border-slate-100 pt-6">
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-3">Trusted by self-publishers on</p>
-              <div className="flex items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                 {/* Simple Text Placeholders representing platforms */}
-                 <div className="text-slate-800 font-serif font-bold text-lg">Kindle Direct</div>
+              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-3">Compatible with</p>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                 {/* Styled text to look more like logos */}
+                 <div className="text-slate-800 font-serif font-black text-xl tracking-tighter">Kindle<span className="font-light">Direct</span></div>
                  <div className="text-slate-800 font-sans font-bold text-lg italic">IngramSpark</div>
-                 <div className="text-slate-800 font-serif font-bold text-lg">Lulu</div>
+                 <div className="text-slate-800 font-serif font-bold text-xl tracking-widest">Lulu</div>
                  <div className="text-slate-800 font-mono font-bold text-lg">Draft2Digital</div>
               </div>
             </div>
           </div>
 
           {/* Visual Mockup - CSS/HTML Constructed Dashboard */}
-          <div className="relative">
+          <div className="relative mt-8 lg:mt-0">
              {/* Background Blob */}
              <div className="absolute top-0 -right-4 -left-4 sm:left-20 h-full bg-brand-100/50 rounded-full blur-3xl -z-10"></div>
              
              {/* Dashboard Container */}
-             <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
+             {/* Changed: Rotate only on large screens (lg:rotate-1) to prevent mobile overflow */}
+             <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform lg:rotate-1 transition-transform duration-500 hover:rotate-0">
                 
                 {/* Mock Browser Header */}
                 <div className="bg-slate-100 px-4 py-3 border-b border-slate-200 flex items-center gap-2">
-                  <div className="flex gap-1.5">
+                  <div className="flex gap-1.5 shrink-0">
                     <div className="w-3 h-3 rounded-full bg-red-400"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                     <div className="w-3 h-3 rounded-full bg-green-400"></div>
                   </div>
-                  <div className="bg-white px-3 py-1 rounded text-xs text-slate-400 flex-1 text-center mx-4 font-mono">
+                  <div className="bg-white px-3 py-1 rounded text-xs text-slate-400 flex-1 text-center mx-2 sm:mx-4 font-mono truncate">
                     publishperfectpal.com/dashboard/scan
                   </div>
                 </div>
 
                 {/* Dashboard Body */}
-                <div className="p-6 grid gap-6">
+                <div className="p-4 sm:p-6 grid gap-4 sm:gap-6">
                   {/* Status Header */}
-                  <div className="flex justify-between items-center border-b border-slate-100 pb-4">
-                    <div>
-                      <h3 className="font-bold text-slate-800 text-lg">My First Novel.pdf</h3>
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-4 gap-2 sm:gap-0">
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-slate-800 text-lg truncate">My First Novel.pdf</h3>
                       <p className="text-sm text-slate-500">Last scan: Just now</p>
                     </div>
-                    <div className="px-3 py-1 bg-red-50 text-red-600 text-sm font-bold rounded-full border border-red-100 flex items-center gap-1">
+                    <div className="px-3 py-1 bg-red-50 text-red-600 text-sm font-bold rounded-full border border-red-100 flex items-center gap-1 shrink-0">
                       <Icons.AlertTriangle size={14} /> 3 Issues Found
                     </div>
                   </div>
 
                   {/* Main Visual Area */}
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
                      {/* Page Preview with Errors */}
                      <div className="flex-1 bg-slate-50 rounded-lg border border-slate-200 p-4 relative min-h-[200px] flex items-center justify-center">
                         <div className="bg-white shadow w-3/4 h-full relative p-4 text-[6px] text-slate-300 overflow-hidden leading-relaxed">
@@ -121,14 +123,14 @@ export const Hero: React.FC = () => {
                         </div>
                         
                         {/* Error Tooltip */}
-                        <div className="absolute top-10 right-0 transform translate-x-2 bg-slate-900 text-white text-xs p-2 rounded shadow-lg z-10 w-32">
+                        <div className="absolute top-10 right-0 transform translate-x-2 sm:translate-x-4 bg-slate-900 text-white text-xs p-2 rounded shadow-lg z-10 w-28 sm:w-32">
                           <span className="font-bold block text-red-400 mb-1">Margin Error</span>
                           Text is too close to the trim line.
                         </div>
                      </div>
 
                      {/* Sidebar Check */}
-                     <div className="w-1/3 space-y-3">
+                     <div className="w-full sm:w-1/3 grid grid-cols-1 gap-3">
                         <div className="p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
                           <div className="text-xs font-bold text-red-800 mb-1">Critical</div>
                           <div className="text-xs text-slate-600">Page 14: Margin &lt; 0.375"</div>
@@ -137,7 +139,7 @@ export const Hero: React.FC = () => {
                           <div className="text-xs font-bold text-yellow-800 mb-1">Warning</div>
                           <div className="text-xs text-slate-600">Image resolution 180dpi</div>
                         </div>
-                        <div className="p-3 bg-green-50 rounded-lg border-l-4 border-green-500 opacity-50">
+                        <div className="p-3 bg-green-50 rounded-lg border-l-4 border-green-500 opacity-50 hidden sm:block">
                           <div className="text-xs font-bold text-green-800 mb-1">Pass</div>
                           <div className="text-xs text-slate-600">Font embedding OK</div>
                         </div>
@@ -147,12 +149,12 @@ export const Hero: React.FC = () => {
              </div>
 
              {/* Floating Badge */}
-             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce hidden sm:flex">
+             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce hidden lg:flex">
                <div className="bg-green-100 p-2 rounded-full text-green-600">
                  <Icons.CheckCircle2 size={24} />
                </div>
                <div>
-                 <div className="text-sm font-bold text-slate-800">Ready for KDP</div>
+                 <div className="text-sm font-bold text-slate-800">Ready for Amazon KDP</div>
                  <div className="text-xs text-slate-500">Verification complete</div>
                </div>
              </div>

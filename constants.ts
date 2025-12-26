@@ -4,7 +4,7 @@ export const BENEFITS: BenefitItem[] = [
   {
     id: 1,
     title: "Save weeks of back and forth",
-    description: "Don't wait for KDP's slow review process just to get rejected.",
+    description: "Don't wait for Amazon KDP's slow review process just to get rejected.",
     iconName: 'clock'
   },
   {
@@ -16,7 +16,7 @@ export const BENEFITS: BenefitItem[] = [
   {
     id: 3,
     title: "See problems visually",
-    description: "We show you exactly where the error is on your actual PDF page.",
+    description: "We show you exactly where the error is on your actual Book PDF pages.",
     iconName: 'search'
   },
   {
@@ -31,12 +31,12 @@ export const FEATURES: FeatureItem[] = [
   {
     id: 1,
     title: "PDF Book Scan",
-    description: "Instantly scans interior files for 50+ common KDP blocking issues.",
+    description: "Instantly scans interior files for 50+ common Amazon KDP blocking issues.",
     iconName: "scan"
   },
   {
     id: 2,
-    title: "KDP Fix Finder",
+    title: "Amazon KDP Fix Finder",
     description: "Translates technical error codes into plain English instructions.",
     iconName: "fix"
   },
@@ -96,5 +96,10 @@ export const FAQS: FaqItem[] = [
     id: 6,
     question: "Is my manuscript safe?",
     answer: "Yes. We use enterprise-grade encryption for uploads and storage. We never share your intellectual property with third parties."
+  },
+  {
+    id: 7,
+    question: "Is Publish Perfect Pal officially affiliated with Amazon KDP?",
+    answer: "No. Publish Perfect Pal is an independent software solution designed to assist self-publishers with book formatting. We are not affiliated with, endorsed by, or associated with Amazon.com, Inc. or Kindle Direct Publishing (KDP)."
   }
 ];

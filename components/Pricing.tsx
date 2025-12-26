@@ -1,10 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icons } from './Icons';
 import { useNavigation } from '../context/NavigationContext';
 
 export const Pricing: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const { navigateTo } = useNavigation();
+  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const [spotsLeft, setSpotsLeft] = useState(10);
+
+  useEffect(() => {
+    // Scarcity logic: Fixed to 10 spots as requested
+    setSpotsLeft(10);
+
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      // Target midnight tonight
+      const endOfDay = new Date();
+      endOfDay.setHours(23, 59, 59, 999);
+      
+      const difference = endOfDay.getTime() - now.getTime();
+      
+      if (difference > 0) {
+        setTimeLeft({
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Define your Stripe Links here
   const LINKS = {
@@ -14,8 +42,10 @@ export const Pricing: React.FC = () => {
     LIFETIME: "https://buy.stripe.com/00w5kD1rP9zK3Ib6ujcAo05"
   };
 
+  const formatTime = (val: number) => val.toString().padStart(2, '0');
+
   return (
-    <section id="pricing" className="py-20 bg-slate-50">
+    <section id="pricing" className="py-20 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
@@ -43,7 +73,7 @@ export const Pricing: React.FC = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-8 items-start">
           
           {/* Card 1: Trial */}
-          <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <h3 className="font-bold text-xl text-slate-900 mb-2">Free Trial</h3>
             <div className="text-3xl font-extrabold text-slate-900 mb-6">Free <span className="text-sm font-normal text-slate-500">for 3 days</span></div>
             <a 
@@ -79,11 +109,11 @@ export const Pricing: React.FC = () => {
           </div>
 
           {/* Card 2: Pro (Highlighted) */}
-          <div className="bg-white rounded-2xl p-8 border-2 border-brand-500 shadow-xl relative transform lg:-translate-y-4 z-10">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-brand-500 shadow-xl relative transform lg:-translate-y-4 z-10">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide whitespace-nowrap">
               MOST POPULAR
             </div>
-            <h3 className="font-bold text-xl text-slate-900 mb-2">Publish Perfect Pal Pro</h3>
+            <h3 className="font-bold text-xl text-slate-900 mb-2 mt-2 lg:mt-0">Publish Perfect Pal Pro</h3>
             <div className="flex items-baseline mb-1">
               <span className="text-3xl font-extrabold text-slate-900">{isAnnual ? '$199.99' : '$19.99'}</span>
               <span className="text-slate-500 ml-1">/{isAnnual ? 'year' : 'month'}</span>
@@ -117,20 +147,23 @@ export const Pricing: React.FC = () => {
             </ul>
           </div>
 
-          {/* Card 3: Lifetime */}
-          <div className="bg-slate-900 rounded-2xl p-8 border border-slate-700 shadow-md text-white relative overflow-hidden">
-            {/* Savings Ribbon */}
+          {/* Card 3: Lifetime (Scarcity Added - Brand Match) */}
+          <div className="bg-slate-900 rounded-2xl p-6 sm:p-8 border border-brand-500/50 shadow-md text-white relative overflow-hidden group">
+            {/* Scarcity Watermark/Glow - Orange */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+            {/* Savings Ribbon - Orange */}
             <div className="absolute top-5 right-5">
-               <span className="bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
-                 Best Value
+               <span className="bg-brand-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">
+                 Limited Time
                </span>
             </div>
 
             <h3 className="font-bold text-xl text-white mb-2">Full Access Bundle</h3>
             <div className="text-3xl font-extrabold text-white mb-2">$197 <span className="text-sm font-normal text-slate-400">one time</span></div>
             
-            {/* SAVINGS CALCULATION */}
-            <div className="bg-white/10 rounded-lg p-3 mb-6 border border-white/10">
+            {/* SAVINGS CALCULATION (Moved Above Countdown) */}
+            <div className="bg-white/10 rounded-lg p-3 mb-4 border border-white/10">
               <div className="text-sm font-medium text-green-400 flex items-center gap-1 mb-1">
                 <Icons.CheckCircle2 size={14} />
                 Pays for itself in 10 months!
@@ -138,6 +171,30 @@ export const Pricing: React.FC = () => {
               <div className="text-xs text-slate-300">
                   One payment. Use it forever.
               </div>
+            </div>
+
+            {/* SCARCITY COUNTER (Fixed to 10 spots as requested) */}
+            <div className="bg-slate-800/50 rounded-lg p-3 mb-6 border border-brand-500/30">
+               <div className="flex justify-between items-center mb-1.5">
+                  <span className="text-xs font-bold text-brand-200 uppercase tracking-wide flex items-center gap-1.5">
+                    <Icons.Zap size={12} className="text-brand-400 fill-brand-400" /> 
+                    Offer ends in:
+                  </span>
+                  <div className="font-mono text-sm font-bold text-white tracking-widest">
+                     {formatTime(timeLeft.hours)}:{formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
+                  </div>
+               </div>
+               
+               {/* Spots Left Bar - Orange Gradient */}
+               <div className="space-y-1.5">
+                 <div className="w-full h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                    {/* Width logic: (spotsLeft / 15) * 100 to show bar depleting */}
+                    <div className="h-full bg-gradient-to-r from-brand-600 to-brand-400 rounded-full transition-all duration-1000" style={{ width: `${Math.min(100, (spotsLeft / 15) * 100)}%` }}></div>
+                 </div>
+                 <div className="text-[10px] text-brand-300 text-right font-medium">
+                    Only {spotsLeft} spots left at this price
+                 </div>
+               </div>
             </div>
 
             <a 
@@ -179,27 +236,13 @@ export const Pricing: React.FC = () => {
 
         </div>
 
-        {/* No Hidden Charges */}
-        <div className="text-center mb-16">
-          <p className="text-slate-500 text-sm font-semibold flex items-center justify-center gap-2 bg-white inline-block px-6 py-2 rounded-full border border-slate-200 shadow-sm">
-            <Icons.Check className="w-4 h-4 text-green-500" strokeWidth={3} />
-            No hidden charges. No surprise fees.
+        {/* No Hidden Charges & Guarantee Badge */}
+        <div className="text-center mb-16 space-y-4">
+          <p className="text-slate-500 text-sm font-semibold flex items-center justify-center gap-2">
+            <Icons.ShieldCheck className="text-brand-500" size={18} />
+            Secure payment via Stripe • Cancel anytime • No hidden fees
           </p>
         </div>
-
-        {/* Risk Reducer */}
-        <div className="max-w-3xl mx-auto bg-white rounded-xl border border-slate-200 p-6 flex flex-col md:flex-row items-center gap-6 mb-16 shadow-sm">
-          <div className="flex-shrink-0 bg-brand-100 rounded-full p-3">
-            <Icons.ShieldCheck className="w-8 h-8 text-brand-600" />
-          </div>
-          <div className="text-center md:text-left">
-            <h4 className="font-bold text-lg text-slate-900">Start with confidence</h4>
-            <p className="text-slate-600 text-sm mt-1">
-              Try the full Pro experience with a free 3 day trial. You won't be charged if you cancel before your trial ends. No long-term contracts, cancel anytime.
-            </p>
-          </div>
-        </div>
-
       </div>
     </section>
   );

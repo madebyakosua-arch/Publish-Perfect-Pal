@@ -9,25 +9,26 @@ export const SocialProof: React.FC = () => {
         {/* Supported Formats Strip - Builds trust without fake stats */}
         <div className="mb-12 border-b border-slate-50 pb-8">
             <p className="text-center text-slate-400 font-semibold uppercase tracking-wider text-xs mb-6">Fully compatible with all book formats</p>
-            <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+            {/* Adjusted gap for mobile responsiveness */}
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-12">
                 <div className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-full border border-slate-100">
-                    <Icons.FileText className="text-brand-600 w-5 h-5" />
-                    <span className="font-bold text-slate-700">Paperback PDF</span>
+                    <Icons.FileText className="text-brand-600 w-5 h-5 flex-shrink-0" />
+                    <span className="font-bold text-slate-700 whitespace-nowrap">Paperback PDF</span>
                 </div>
                 <div className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-full border border-slate-100">
-                    <Icons.FileText className="text-brand-600 w-5 h-5" />
-                    <span className="font-bold text-slate-700">Hardback PDF</span>
+                    <Icons.FileText className="text-brand-600 w-5 h-5 flex-shrink-0" />
+                    <span className="font-bold text-slate-700 whitespace-nowrap">Hardback PDF</span>
                 </div>
                 <div className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-full border border-slate-100">
-                    <Icons.Image className="text-brand-600 w-5 h-5" />
-                    <span className="font-bold text-slate-700">Kindle eBooks</span>
+                    <Icons.Image className="text-brand-600 w-5 h-5 flex-shrink-0" />
+                    <span className="font-bold text-slate-700 whitespace-nowrap">Kindle eBooks</span>
                 </div>
             </div>
         </div>
 
         <div className="text-center mb-8">
           <p className="text-slate-500 font-medium uppercase tracking-wider text-sm mb-2">The Reality of Publishing</p>
-          <h2 className="text-2xl font-bold text-slate-900">Don't let these common KDP errors block your book</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Don't let these common Amazon KDP errors block your book</h2>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
@@ -38,7 +39,7 @@ export const SocialProof: React.FC = () => {
              <div>
                <h3 className="font-bold text-slate-900 text-sm mb-1">Bleed & Margin Errors</h3>
                <p className="text-xs text-slate-600 leading-relaxed">
-                 The #1 reason for rejection. Elements outside the safe zone will trigger an instant block from KDP bots.
+                 The #1 reason for rejection. Elements outside the safe zone will trigger an instant block from Amazon KDP bots.
                </p>
              </div>
           </div>
@@ -62,7 +63,7 @@ export const SocialProof: React.FC = () => {
              <div>
                <h3 className="font-bold text-slate-900 text-sm mb-1">Incorrect Trim Size</h3>
                <p className="text-xs text-slate-600 leading-relaxed">
-                 If your PDF page size doesn't match your KDP selection exactly, your upload will fail.
+                 If your Book PDF pages size doesn't match your Amazon KDP selection exactly, your upload will fail.
                </p>
              </div>
           </div>

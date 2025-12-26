@@ -21,7 +21,7 @@ export const Benefits: React.FC = () => {
             Why self-published authors use Publish Perfect Pal
           </h2>
           <p className="text-lg text-slate-600">
-            Stop guessing and start publishing. We turn the technical headache of KDP into a simple checklist.
+            Stop guessing and start publishing. We turn the technical headache of Amazon KDP into a simple checklist.
           </p>
         </div>
 

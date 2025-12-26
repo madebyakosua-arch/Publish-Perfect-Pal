@@ -11,13 +11,16 @@ import {
   Eye, 
   History,
   Star,
+  StarHalf,
   Menu,
   X,
   ChevronDown,
   ArrowRight,
   AlertTriangle,
   Check,
-  Quote
+  Quote,
+  User,
+  Zap
 } from 'lucide-react';
 
 export const Icons = {
@@ -32,11 +35,14 @@ export const Icons = {
   Eye,
   History,
   Star,
+  StarHalf,
   Menu,
   X,
   ChevronDown,
   ArrowRight,
   AlertTriangle,
   Check,
-  Quote
+  Quote,
+  User,
+  Zap
 };

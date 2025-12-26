@@ -20,7 +20,7 @@ export const EmotionalClose: React.FC = () => {
           Ready to publish with confidence?
         </h2>
         <p className="text-xl text-brand-100 mb-10 max-w-2xl mx-auto">
-          Stop guessing why KDP rejects your files. Let Publish Perfect Pal check your book before you upload.
+          Stop guessing why Amazon KDP rejects your files. Let Publish Perfect Pal check your book before you upload.
         </p>
         <a 
           href="#pricing"

@@ -19,7 +19,7 @@ export const HowItWorks: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-            From upload to KDP ready in three steps
+            From upload to Amazon KDP ready in three steps
           </h2>
         </div>
 
@@ -59,7 +59,7 @@ export const HowItWorks: React.FC = () => {
             </div>
             <h3 className="font-bold text-xl text-slate-900 mb-3">Fix & Upload Confidently</h3>
             <p className="text-slate-600">
-              Follow our plain-English instructions to fix errors, then upload to KDP without rejection.
+              Follow our plain-English instructions to fix errors, then upload to Amazon KDP without rejection.
             </p>
           </div>
         </div>

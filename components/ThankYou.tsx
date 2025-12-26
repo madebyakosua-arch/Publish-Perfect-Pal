@@ -8,7 +8,7 @@ export const ThankYou: React.FC = () => {
       {/* Main Confirmation Card */}
       <div className="max-w-3xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden text-center mb-16">
         {/* Header Section */}
-        <div className="bg-brand-500 p-10 relative overflow-hidden">
+        <div className="bg-brand-500 p-6 md:p-10 relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
           
@@ -21,7 +21,7 @@ export const ThankYou: React.FC = () => {
         </div>
         
         {/* Body Section */}
-        <div className="p-8 md:p-12">
+        <div className="p-6 md:p-12">
           
           {/* Instruction Text */}
           <p className="text-slate-700 text-lg mb-8 font-medium">
@@ -35,19 +35,19 @@ export const ThankYou: React.FC = () => {
                    <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
                       <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
                    </div>
-                   <span className="font-bold text-slate-800 text-lg">Catch issues before you publish on Amazon KDP</span>
+                   <span className="font-bold text-slate-800 text-base sm:text-lg">Catch issues before you publish on Amazon KDP</span>
                 </li>
                 <li className="flex items-center gap-4">
                    <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
                       <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
                    </div>
-                   <span className="font-bold text-slate-800 text-lg">Publish faster with confidence</span>
+                   <span className="font-bold text-slate-800 text-base sm:text-lg">Publish faster with confidence</span>
                 </li>
                 <li className="flex items-center gap-4">
                    <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
                       <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
                    </div>
-                   <span className="font-bold text-slate-800 text-lg">Confidently publish books that meet professional quality expectations</span>
+                   <span className="font-bold text-slate-800 text-base sm:text-lg">Confidently publish books that meet professional quality expectations</span>
                 </li>
              </ul>
           </div>
@@ -81,7 +81,7 @@ export const ThankYou: React.FC = () => {
         </div>
       </div>
 
-      {/* Featured Testimonial Section */}
+      {/* Featured Testimonial Section (Replaces Values) */}
       <div className="max-w-4xl w-full mx-auto mb-16 px-4">
         <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-8 md:p-12 relative overflow-hidden">
            {/* Quote Icon Background Watermark */}
