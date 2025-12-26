@@ -23,25 +23,33 @@ export const ThankYou: React.FC = () => {
         {/* Body Section */}
         <div className="p-8 md:p-12">
           
-          {/* Benefits List */}
-          <div className="flex flex-col items-center gap-4 mb-10">
-            <div className="flex items-center gap-3 bg-green-50 px-6 py-3 rounded-full border border-green-100">
-              <div className="bg-green-100 p-1 rounded-full">
-                 <Icons.CheckCircle2 className="text-green-600 w-5 h-5" />
-              </div>
-              <span className="font-bold text-green-800 text-lg">Account upgraded successfully</span>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-2">
-              <div className="flex items-center gap-2 text-slate-700 font-medium">
-                <Icons.Check className="text-brand-500 w-5 h-5" />
-                <span>Instant access to Scan Engine</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700 font-medium">
-                <Icons.Check className="text-brand-500 w-5 h-5" />
-                <span>Priority Support Enabled</span>
-              </div>
-            </div>
+          {/* Instruction Text */}
+          <p className="text-slate-700 text-lg mb-8 font-medium">
+            You can access Publish Perfect Pal by clicking the button below.
+          </p>
+
+          {/* Requested 3 Benefits List */}
+          <div className="bg-slate-50 rounded-xl p-8 mb-10 border border-slate-100 max-w-lg mx-auto">
+             <ul className="space-y-4 text-left inline-block">
+                <li className="flex items-center gap-4">
+                   <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
+                      <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
+                   </div>
+                   <span className="font-bold text-slate-800 text-lg">Account upgraded successfully</span>
+                </li>
+                <li className="flex items-center gap-4">
+                   <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
+                      <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
+                   </div>
+                   <span className="font-bold text-slate-800 text-lg">Instant access to Scan Engine</span>
+                </li>
+                <li className="flex items-center gap-4">
+                   <div className="bg-green-100 p-1.5 rounded-full flex-shrink-0">
+                      <Icons.CheckCircle2 className="text-green-600 w-5 h-5" strokeWidth={3} />
+                   </div>
+                   <span className="font-bold text-slate-800 text-lg">Priority Support Enabled</span>
+                </li>
+             </ul>
           </div>
 
           {/* Action Button */}
