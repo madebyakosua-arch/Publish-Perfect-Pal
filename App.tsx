@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
@@ -8,9 +8,15 @@ import { LegalContent } from './components/pages/Legal';
 import { Contact } from './components/pages/Contact';
 import { ThankYou } from './components/pages/ThankYou';
 import { NavigationProvider, useNavigation } from './context/NavigationContext';
+import * as fbq from './lib/fpixel';
 
 const MainContent: React.FC = () => {
   const { currentPage } = useNavigation();
+
+  useEffect(() => {
+    // Trigger Facebook Pixel PageView on route change
+    fbq.pageview();
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {

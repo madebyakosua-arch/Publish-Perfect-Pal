@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Icons } from './Icons';
 import { useNavigation } from '../context/NavigationContext';
+import * as fbq from '../lib/fpixel';
 
 export const Pricing: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -42,6 +43,18 @@ export const Pricing: React.FC = () => {
     LIFETIME: "https://buy.stripe.com/00w5kD1rP9zK3Ib6ujcAo05"
   };
 
+  const handleCheckout = (planName: string, value: number, url: string) => {
+    // Fire Facebook Pixel Event
+    fbq.event('InitiateCheckout', {
+      content_name: planName,
+      currency: 'USD',
+      value: value
+    });
+    
+    // Proceed to Stripe
+    window.location.href = url;
+  };
+
   const formatTime = (val: number) => val.toString().padStart(2, '0');
 
   return (
@@ -76,12 +89,12 @@ export const Pricing: React.FC = () => {
           <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <h3 className="font-bold text-xl text-slate-900 mb-2">Free Trial</h3>
             <div className="text-3xl font-extrabold text-slate-900 mb-6">Free <span className="text-sm font-normal text-slate-500">for 3 days</span></div>
-            <a 
-              href={LINKS.TRIAL}
+            <button 
+              onClick={() => handleCheckout('Free Trial', 0.00, LINKS.TRIAL)}
               className="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 rounded-lg mb-4 transition-colors"
             >
               Start Free Trial
-            </a>
+            </button>
             
             {/* Added Disclaimer - Updated to be more clear/visible */}
             <div className="bg-amber-50 p-3 rounded-lg border border-amber-100 mb-6">
@@ -122,12 +135,16 @@ export const Pricing: React.FC = () => {
               {isAnnual ? 'Save $40 compared to monthly' : 'Cancel at any time'}
             </p>
             
-            <a 
-              href={isAnnual ? LINKS.PRO_YEARLY : LINKS.PRO_MONTHLY}
+            <button 
+              onClick={() => handleCheckout(
+                isAnnual ? 'Pro Yearly' : 'Pro Monthly', 
+                isAnnual ? 199.99 : 19.99,
+                isAnnual ? LINKS.PRO_YEARLY : LINKS.PRO_MONTHLY
+              )}
               className="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg mb-6 transition-colors"
             >
               Choose Pro
-            </a>
+            </button>
             <ul className="space-y-3">
               {[
                 "50 Book PDF scans / month",
@@ -197,12 +214,12 @@ export const Pricing: React.FC = () => {
                </div>
             </div>
 
-            <a 
-              href={LINKS.LIFETIME}
+            <button 
+              onClick={() => handleCheckout('Lifetime Bundle', 197.00, LINKS.LIFETIME)}
               className="block w-full text-center bg-white hover:bg-brand-50 text-brand-600 font-bold py-3 rounded-lg mb-6 transition-colors border border-transparent hover:border-brand-200 relative z-10"
             >
               Get lifetime access
-            </a>
+            </button>
             <ul className="space-y-3 relative z-10">
               {[
                 "Unlimited Paperback, Hardback & Kindle scans",

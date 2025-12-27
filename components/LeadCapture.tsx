@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icons } from './Icons';
+import * as fbq from '../lib/fpixel';
 
 export const LeadCapture: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -7,9 +8,19 @@ export const LeadCapture: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [copied, setCopied] = useState(false);
+  
+  // State for CAPI cookies
+  const [fbp, setFbp] = useState('');
+  const [fbc, setFbc] = useState('');
 
   // UPDATE THIS CODE WHEN YOU CREATE IT
   const COUPON_CODE = "10DISCOUNTPPP"; 
+
+  useEffect(() => {
+    // Capture Facebook Browser IDs for CAPI
+    setFbp(fbq.getCookie('_fbp'));
+    setFbc(fbq.getCookie('_fbc'));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,12 +34,23 @@ export const LeadCapture: React.FC = () => {
         },
         body: JSON.stringify({ 
           email: email,
-          _subject: "New 10% Off Coupon Request"
+          _subject: "New 10% Off Coupon Request",
+          // Pass these to Formspree so you can send them to CAPI via Zapier/Make
+          facebook_fbp: fbp,
+          facebook_fbc: fbc
         })
       });
 
       if (response.ok) {
         setSubmitted(true);
+        
+        // Fire Facebook Pixel 'Lead' event
+        fbq.event('Lead', {
+          content_name: 'Newsletter Coupon',
+          currency: 'USD',
+          value: 0.00
+        });
+
         setEmail('');
         setShowModal(true);
       } else {
@@ -75,6 +97,10 @@ export const LeadCapture: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              {/* Hidden fields for automation tools */}
+              <input type="hidden" name="facebook_fbp" value={fbp} />
+              <input type="hidden" name="facebook_fbc" value={fbc} />
+              
               <input 
                 type="email" 
                 name="email"
