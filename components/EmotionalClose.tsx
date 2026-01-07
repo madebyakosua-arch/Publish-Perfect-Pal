@@ -27,7 +27,7 @@ export const EmotionalClose: React.FC = () => {
           onClick={scrollToPricing}
           className="inline-block bg-white text-brand-600 hover:bg-brand-50 px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
         >
-          Start Free Trial
+          Get Access Now
         </a>
       </div>
     </section>

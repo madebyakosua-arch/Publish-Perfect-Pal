@@ -42,13 +42,13 @@ export const LegalContent: React.FC<{ type: 'privacy' | 'terms' | 'refund' }> = 
     ),
     refund: (
       <>
-        <h3 className="text-xl font-bold text-slate-900 mb-2 mt-8">1. Free Trial and Cancellations</h3>
+        <h3 className="text-xl font-bold text-slate-900 mb-2 mt-8">1. Cancellations</h3>
         <p className="mb-4 leading-relaxed">
-          We offer a free 3-day trial for you to evaluate Publish Perfect Pal. You may cancel your subscription at any time before the trial ends to avoid being charged. Cancellations can be made directly through your account settings.
+          You may cancel your monthly or yearly subscription at any time directly through your account settings. Your access will continue until the end of the current billing period.
         </p>
         <h3 className="text-xl font-bold text-slate-900 mb-2 mt-8">2. Refund Policy</h3>
         <p className="mb-4 leading-relaxed">
-          Due to the digital nature of our product and the immediate availability of our tools, <strong>all sales are final</strong>. We do not offer refunds for monthly subscriptions, yearly subscriptions, or lifetime bundles once payment has been processed. Please use the free 3-day trial to fully evaluate the product before purchasing.
+          Due to the digital nature of our product and the immediate availability of our tools, <strong>all sales are final</strong>. We do not offer refunds for monthly subscriptions, yearly subscriptions, or lifetime bundles once payment has been processed. 
         </p>
         <h3 className="text-xl font-bold text-slate-900 mb-2 mt-8">3. Billing Disputes</h3>
         <p className="mb-4 leading-relaxed">

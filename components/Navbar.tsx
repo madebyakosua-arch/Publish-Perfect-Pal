@@ -86,7 +86,7 @@ export const Navbar: React.FC = () => {
               onClick={() => handleNavClick('#pricing')}
               className="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap"
             >
-              Start Free Trial
+              Get Started Now
             </button>
           </div>
 
@@ -124,7 +124,7 @@ export const Navbar: React.FC = () => {
                 }}
                 className="w-full text-center bg-brand-500 text-white font-bold py-3 rounded-lg shadow-md block"
               >
-                Start Free Trial
+                Get Started Now
               </button>
             </div>
           </div>

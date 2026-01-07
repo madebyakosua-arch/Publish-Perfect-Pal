@@ -41,12 +41,12 @@ export const Login: React.FC = () => {
 
         <div className="mt-8 text-center text-sm text-slate-600">
           Don't have an account?{' '}
-          <a 
-            href={STRIPE_TRIAL_LINK}
+          <button 
+            onClick={() => navigateTo('home')}
             className="text-brand-600 hover:text-brand-700 font-bold"
           >
-            Start free trial
-          </a>
+            Get an account
+          </button>
         </div>
       </div>
     </div>

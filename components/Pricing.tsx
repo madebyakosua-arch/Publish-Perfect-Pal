@@ -7,11 +7,11 @@ export const Pricing: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const { navigateTo } = useNavigation();
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
-  const [spotsLeft, setSpotsLeft] = useState(10);
+  const [spotsLeft, setSpotsLeft] = useState(6);
 
   useEffect(() => {
-    // Scarcity logic: Fixed to 10 spots as requested
-    setSpotsLeft(10);
+    // Scarcity logic: Fixed to 6 spots as requested
+    setSpotsLeft(6);
 
     const calculateTimeLeft = () => {
       const now = new Date();
@@ -37,7 +37,6 @@ export const Pricing: React.FC = () => {
 
   // Define your Stripe Links here
   const LINKS = {
-    TRIAL: "https://buy.stripe.com/6oU3cv8Uh27i3IbcSHcAo06",
     PRO_MONTHLY: "https://buy.stripe.com/14A14n9YlfY86UncSHcAo04",
     PRO_YEARLY: "https://buy.stripe.com/aFa3cvc6taDO2E7bODcAo02",
     LIFETIME: "https://buy.stripe.com/00w5kD1rP9zK3Ib6ujcAo05"
@@ -65,7 +64,7 @@ export const Pricing: React.FC = () => {
             Simple pricing for serious self-publishers
           </h2>
           <p className="text-lg text-slate-600 mb-8">
-            Start with the free 3 day trial, then choose the plan that fits your publishing goals.
+            Choose the plan that fits your publishing goals.
           </p>
 
           {/* Toggle Switch */}
@@ -83,50 +82,15 @@ export const Pricing: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-8 items-start">
+        {/* Changed grid to max-w-4xl and 2 columns since trial is removed */}
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-8 items-start">
           
-          {/* Card 1: Trial */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <h3 className="font-bold text-xl text-slate-900 mb-2">Free Trial</h3>
-            <div className="text-3xl font-extrabold text-slate-900 mb-6">Free <span className="text-sm font-normal text-slate-500">for 3 days</span></div>
-            <button 
-              onClick={() => handleCheckout('Free Trial', 0.00, LINKS.TRIAL)}
-              className="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 rounded-lg mb-4 transition-colors"
-            >
-              Start Free Trial
-            </button>
-            
-            {/* Added Disclaimer - Updated to be more clear/visible */}
-            <div className="bg-amber-50 p-3 rounded-lg border border-amber-100 mb-6">
-                <p className="text-[11px] text-amber-800 leading-snug">
-                   <strong>Please note:</strong> You will not be charged after the 3 days. However, you will lose access to the software unless you upgrade to a Pro or Lifetime plan.
-                </p>
-            </div>
-
-            <p className="text-xs text-slate-400 mb-6 italic">Each feature can be used once during trial.</p>
-            <ul className="space-y-3">
-              {[
-                "1 Book PDF scan (Paperback, Hardback or Kindle)",
-                "1 KDP Fix Finder use",
-                "1 Page Perfector auto-format",
-                "1 Book Cover Analysis",
-                "Trial report stored for 3 days",
-                "Email support"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
-                  <Icons.Check size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Card 2: Pro (Highlighted) */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-brand-500 shadow-xl relative transform lg:-translate-y-4 z-10">
+          {/* Card 1: Pro (Highlighted) */}
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-brand-500 shadow-xl relative z-10">
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide whitespace-nowrap">
               MOST POPULAR
             </div>
-            <h3 className="font-bold text-xl text-slate-900 mb-2 mt-2 lg:mt-0">Publish Perfect Pal Pro</h3>
+            <h3 className="font-bold text-xl text-slate-900 mb-2 mt-2">Publish Perfect Pal Pro</h3>
             <div className="flex items-baseline mb-1">
               <span className="text-3xl font-extrabold text-slate-900">{isAnnual ? '$199.99' : '$19.99'}</span>
               <span className="text-slate-500 ml-1">/{isAnnual ? 'year' : 'month'}</span>
@@ -143,7 +107,7 @@ export const Pricing: React.FC = () => {
               )}
               className="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg mb-6 transition-colors"
             >
-              Choose Pro
+              Get Pro Access
             </button>
             <ul className="space-y-3">
               {[
@@ -164,7 +128,7 @@ export const Pricing: React.FC = () => {
             </ul>
           </div>
 
-          {/* Card 3: Lifetime (Scarcity Added - Brand Match) */}
+          {/* Card 2: Lifetime (Scarcity Added - Brand Match) */}
           <div id="lifetime-bundle" className="bg-slate-900 rounded-2xl p-6 sm:p-8 border border-brand-500/50 shadow-md text-white relative overflow-hidden group">
             {/* Scarcity Watermark/Glow - Orange */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-500/10 blur-3xl rounded-full pointer-events-none"></div>
@@ -190,7 +154,7 @@ export const Pricing: React.FC = () => {
               </div>
             </div>
 
-            {/* SCARCITY COUNTER (Fixed to 10 spots as requested) */}
+            {/* SCARCITY COUNTER (Fixed to 6 spots as requested) */}
             <div className="bg-slate-800/50 rounded-lg p-3 mb-6 border border-brand-500/30 relative z-10">
                <div className="flex justify-between items-center mb-1.5">
                   <span className="text-xs font-bold text-brand-200 uppercase tracking-wide flex items-center gap-1.5">

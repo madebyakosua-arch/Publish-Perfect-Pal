@@ -9,15 +9,8 @@ export const Signup: React.FC = () => {
     <div className="min-h-[80vh] flex items-center justify-center bg-slate-50 px-4 py-12">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg border border-slate-200 p-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-extrabold text-slate-900">Start Your Free Trial</h2>
+          <h2 className="text-3xl font-extrabold text-slate-900">Create Your Account</h2>
           <p className="text-slate-600 mt-2">Get your book KDP ready in minutes</p>
-        </div>
-
-        <div className="bg-brand-50 border border-brand-100 rounded-lg p-4 mb-6 flex gap-3">
-          <Icons.ShieldCheck className="text-brand-600 shrink-0" size={24} />
-          <div className="text-sm text-brand-900">
-            <span className="font-bold">No credit card required.</span> Full access to Pro features for 3 days.
-          </div>
         </div>
 
         <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
