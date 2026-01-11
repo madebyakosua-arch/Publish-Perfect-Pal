@@ -9,23 +9,6 @@ export const FounderNote: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8 text-center">
           I Know Exactly How You Feel
         </h2>
-
-        {/* Founder Photo Placeholder */}
-        <div className="flex justify-center mb-10">
-          <div className="relative group cursor-pointer">
-            {/* 
-               INSTRUCTIONS: 
-               Replace the <Icons.User ... /> line below with your <img> tag when ready.
-               Example: <img src="your-photo.jpg" alt="Stephanie" className="w-full h-full object-cover" />
-            */}
-            <div className="w-32 h-32 md:w-40 md:h-40 bg-slate-200 rounded-full border-4 border-white shadow-xl overflow-hidden flex items-center justify-center relative z-10">
-              <Icons.User className="w-16 h-16 text-slate-400" />
-            </div>
-            
-            {/* Decorative background blob */}
-            <div className="absolute top-2 -right-2 w-32 h-32 md:w-40 md:h-40 rounded-full bg-brand-100 -z-0"></div>
-          </div>
-        </div>
         
         <div className="space-y-8 text-lg text-slate-600 leading-relaxed">
           <p>

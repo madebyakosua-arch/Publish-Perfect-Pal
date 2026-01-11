@@ -14,7 +14,7 @@ export const LeadCapture: React.FC = () => {
   const [fbc, setFbc] = useState('');
 
   // UPDATE THIS CODE WHEN YOU CREATE IT
-  const COUPON_CODE = "10DISCOUNTPPP"; 
+  const COUPON_CODE = "PPP30"; 
 
   useEffect(() => {
     // Capture Facebook Browser IDs for CAPI
@@ -34,7 +34,7 @@ export const LeadCapture: React.FC = () => {
         },
         body: JSON.stringify({ 
           email: email,
-          _subject: "New 10% Off Coupon Request",
+          _subject: "New 30% Off Coupon Request",
           // Pass these to Formspree so you can send them to CAPI via Zapier/Make
           facebook_fbp: fbp,
           facebook_fbc: fbc
@@ -76,10 +76,10 @@ export const LeadCapture: React.FC = () => {
           <div className="text-center md:text-left max-w-xl">
             <h3 className="text-white font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
               <Icons.Star className="text-brand-500 fill-brand-500" />
-              Get 10% off your Pro Plan
+              Get 30% off your Pro Plan
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Join our newsletter for self-publishing tips and we'll instantly send you a code for <strong>10% off</strong> your first month of Publish Perfect Pal Pro (monthly plan only).
+              Join our newsletter for self-publishing tips and we'll instantly send you a code for <strong>30% off</strong> your first month of Publish Perfect Pal Pro (monthly plan only).
             </p>
           </div>
           
@@ -116,7 +116,7 @@ export const LeadCapture: React.FC = () => {
                 disabled={isSubmitting}
                 className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-bold transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Sending...' : 'Get 10% Coupon'}
+                {isSubmitting ? 'Sending...' : 'Get 30% Coupon'}
               </button>
             </form>
           )}
@@ -142,7 +142,7 @@ export const LeadCapture: React.FC = () => {
               
               <h3 className="text-2xl font-bold text-slate-900 mb-2">You're on the list!</h3>
               <p className="text-slate-600 mb-6">
-                Here is your exclusive coupon code for <strong>10% off</strong> the Pro plan (monthly):
+                Here is your exclusive coupon code for <strong>30% off</strong> the Pro plan (monthly):
               </p>
               
               <div 

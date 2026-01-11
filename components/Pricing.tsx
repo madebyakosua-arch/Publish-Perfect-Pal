@@ -39,7 +39,7 @@ export const Pricing: React.FC = () => {
   const LINKS = {
     PRO_MONTHLY: "https://buy.stripe.com/14A14n9YlfY86UncSHcAo04",
     PRO_YEARLY: "https://buy.stripe.com/aFa3cvc6taDO2E7bODcAo02",
-    LIFETIME: "https://buy.stripe.com/00w5kD1rP9zK3Ib6ujcAo05"
+    LIFETIME: "https://buy.stripe.com/5kQaEXgmJfY80vZcSHcAo0m"
   };
 
   const handleCheckout = (planName: string, value: number, url: string) => {
@@ -141,13 +141,13 @@ export const Pricing: React.FC = () => {
                </span>
             </div>
 
-            <div className="text-3xl font-extrabold text-white mb-2 relative z-10">$197 <span className="text-sm font-normal text-slate-400">one time</span></div>
+            <div className="text-3xl font-extrabold text-white mb-2 relative z-10">$97 <span className="text-sm font-normal text-slate-400">one time</span></div>
             
             {/* SAVINGS CALCULATION (Moved Above Countdown) */}
             <div className="bg-white/10 rounded-lg p-3 mb-4 border border-white/10 relative z-10">
               <div className="text-sm font-medium text-green-400 flex items-center gap-1 mb-1">
                 <Icons.CheckCircle2 size={14} />
-                Pays for itself in 10 months!
+                Pays for itself in 5 months!
               </div>
               <div className="text-xs text-slate-300">
                   One payment. Use it forever.
@@ -179,7 +179,7 @@ export const Pricing: React.FC = () => {
             </div>
 
             <button 
-              onClick={() => handleCheckout('Lifetime Bundle', 197.00, LINKS.LIFETIME)}
+              onClick={() => handleCheckout('Lifetime Bundle', 97.00, LINKS.LIFETIME)}
               className="block w-full text-center bg-white hover:bg-brand-50 text-brand-600 font-bold py-3 rounded-lg mb-6 transition-colors border border-transparent hover:border-brand-200 relative z-10"
             >
               Get lifetime access
