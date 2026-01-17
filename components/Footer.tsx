@@ -83,6 +83,9 @@ export const Footer: React.FC = () => {
                <p className="text-xs text-slate-500 leading-relaxed">
                  Disclaimer: Publish Perfect Pal is an independent software tool developed by Made By Akosua to assist self-publishers. We are not affiliated with, endorsed by, or associated with Amazon.com, Inc. or Kindle Direct Publishing (KDP).
                </p>
+               <p className="text-xs text-slate-500 leading-relaxed mt-4">
+                 ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.
+               </p>
             </div>
             
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm justify-start md:justify-end">

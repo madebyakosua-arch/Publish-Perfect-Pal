@@ -22,7 +22,10 @@ import {
   User,
   Zap,
   CreditCard,
-  Landmark
+  Landmark,
+  DollarSign,
+  Repeat,
+  SlidersHorizontal
 } from 'lucide-react';
 
 export const Icons = {
@@ -48,5 +51,8 @@ export const Icons = {
   User,
   Zap,
   CreditCard,
-  Landmark
+  Landmark,
+  DollarSign,
+  Repeat,
+  SlidersHorizontal
 };

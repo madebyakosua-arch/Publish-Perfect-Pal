@@ -13,6 +13,7 @@ import { EmotionalClose } from './EmotionalClose';
 import { WithoutWith } from './WithoutWith';
 import { StickyCTA } from './StickyCTA';
 import { ComparisonTable } from './ComparisonTable';
+import { WhyPay } from './WhyPay';
 
 export const Home: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ export const Home: React.FC = () => {
       <LeadCapture />
       <SocialProof />
       <ComparisonTable />
+      <WhyPay />
       <VideoDemo />
       <WithoutWith />
       <Benefits />

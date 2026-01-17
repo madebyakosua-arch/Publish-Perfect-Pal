@@ -78,6 +78,20 @@ export const ThankYou: React.FC = () => {
               <span className="text-xs font-bold text-slate-700 uppercase tracking-wide">We respond to all support requests in 24hrs</span>
             </div>
           </div>
+          
+          {/* ClickBank Info Section */}
+          <div className="mt-10 pt-10 border-t border-slate-100 max-w-xl mx-auto text-left">
+            <div className="bg-slate-100 border border-slate-200 rounded-lg p-4 mb-4">
+              <h4 className="font-bold text-slate-800 text-sm flex items-center gap-2"><Icons.CreditCard size={16} className="text-slate-500" /> Billing Information</h4>
+              <p className="text-slate-600 text-sm mt-2">
+                Purchase Will Be Reflected as "ClickBank or "CLKBANK*COM if you came through a referral.
+              </p>
+            </div>
+            <p className="text-xs text-slate-500 leading-relaxed">
+              ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.
+            </p>
+          </div>
+
         </div>
       </div>
 

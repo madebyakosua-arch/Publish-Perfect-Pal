@@ -37,9 +37,9 @@ export const Pricing: React.FC = () => {
 
   // Define your Stripe Links here
   const LINKS = {
-    PRO_MONTHLY: "https://buy.stripe.com/14A14n9YlfY86UncSHcAo04",
-    PRO_YEARLY: "https://buy.stripe.com/aFa3cvc6taDO2E7bODcAo02",
-    LIFETIME: "https://buy.stripe.com/5kQaEXgmJfY80vZcSHcAo0m"
+    PRO_MONTHLY: "https://buy.stripe.com/14A8wP0nLfY8fqTf0PcAo0n",
+    PRO_YEARLY: "https://buy.stripe.com/6oUbJ12vTfY81A34mbcAo0q",
+    LIFETIME: "https://buy.stripe.com/eVqfZh2vTcLW0vZ9GvcAo0o"
   };
 
   const handleCheckout = (planName: string, value: number, url: string) => {
@@ -77,7 +77,7 @@ export const Pricing: React.FC = () => {
               <div className={`w-6 h-6 bg-white rounded-full shadow-sm transform transition-transform ${isAnnual ? 'translate-x-6' : 'translate-x-0'}`}></div>
             </button>
             <span className={`text-sm font-medium ${isAnnual ? 'text-slate-900' : 'text-slate-500'}`}>
-              Yearly <span className="text-brand-600 font-bold text-xs ml-1 whitespace-nowrap">(Save $40)</span>
+              Yearly <span className="text-brand-600 font-bold text-xs ml-1 whitespace-nowrap">(Save over $37)</span>
             </span>
           </div>
         </div>
@@ -92,17 +92,17 @@ export const Pricing: React.FC = () => {
             </div>
             <h3 className="font-bold text-xl text-slate-900 mb-2 mt-2">Publish Perfect Pal Pro</h3>
             <div className="flex items-baseline mb-1">
-              <span className="text-3xl font-extrabold text-slate-900">{isAnnual ? '$199.99' : '$19.99'}</span>
+              <span className="text-3xl font-extrabold text-slate-900">{isAnnual ? '$139.99' : '$13.99'}</span>
               <span className="text-slate-500 ml-1">/{isAnnual ? 'year' : 'month'}</span>
             </div>
             <p className={`text-xs font-medium mb-6 h-4 ${isAnnual ? 'text-brand-600' : 'text-slate-500'}`}>
-              {isAnnual ? 'Save $40 compared to monthly' : 'Cancel at any time'}
+              {isAnnual ? 'Save over $37 compared to monthly' : 'Cancel at any time'}
             </p>
             
             <button 
               onClick={() => handleCheckout(
                 isAnnual ? 'Pro Yearly' : 'Pro Monthly', 
-                isAnnual ? 199.99 : 19.99,
+                isAnnual ? 139.99 : 13.99,
                 isAnnual ? LINKS.PRO_YEARLY : LINKS.PRO_MONTHLY
               )}
               className="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg mb-6 transition-colors"
@@ -141,13 +141,13 @@ export const Pricing: React.FC = () => {
                </span>
             </div>
 
-            <div className="text-3xl font-extrabold text-white mb-2 relative z-10">$97 <span className="text-sm font-normal text-slate-400">one time</span></div>
+            <div className="text-3xl font-extrabold text-white mb-2 relative z-10">$197 <span className="text-sm font-normal text-slate-400">one time</span></div>
             
             {/* SAVINGS CALCULATION (Moved Above Countdown) */}
             <div className="bg-white/10 rounded-lg p-3 mb-4 border border-white/10 relative z-10">
               <div className="text-sm font-medium text-green-400 flex items-center gap-1 mb-1">
                 <Icons.CheckCircle2 size={14} />
-                Pays for itself in 5 months!
+                Pays for itself in about 14 months!
               </div>
               <div className="text-xs text-slate-300">
                   One payment. Use it forever.
@@ -179,7 +179,7 @@ export const Pricing: React.FC = () => {
             </div>
 
             <button 
-              onClick={() => handleCheckout('Lifetime Bundle', 97.00, LINKS.LIFETIME)}
+              onClick={() => handleCheckout('Lifetime Bundle', 197.00, LINKS.LIFETIME)}
               className="block w-full text-center bg-white hover:bg-brand-50 text-brand-600 font-bold py-3 rounded-lg mb-6 transition-colors border border-transparent hover:border-brand-200 relative z-10"
             >
               Get lifetime access
@@ -191,8 +191,7 @@ export const Pricing: React.FC = () => {
                 "Lifetime product access",
                 "VIP Priority Support",
                 "Exclusive beta features",
-                "Private community access",
-                "Founding member badge"
+                "Private community access"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
                   <Icons.Check size={16} className="text-brand-400 flex-shrink-0 mt-0.5" />

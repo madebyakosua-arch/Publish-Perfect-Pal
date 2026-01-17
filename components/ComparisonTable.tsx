@@ -38,7 +38,7 @@ export const ComparisonTable: React.FC = () => {
                 <tr>
                   <td className="p-4 border-b border-slate-100 font-bold text-slate-700">Cost</td>
                   <td className="p-4 border-b border-slate-100 bg-brand-50/30 text-center font-bold text-green-600">
-                    $19.99
+                    $13.99
                   </td>
                   <td className="p-4 border-b border-slate-100 text-center text-slate-600">
                     $100 - $500+

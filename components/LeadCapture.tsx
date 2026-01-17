@@ -3,18 +3,13 @@ import { Icons } from './Icons';
 import * as fbq from '../lib/fpixel';
 
 export const LeadCapture: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [copied, setCopied] = useState(false);
   
   // State for CAPI cookies
   const [fbp, setFbp] = useState('');
   const [fbc, setFbc] = useState('');
-
-  // UPDATE THIS CODE WHEN YOU CREATE IT
-  const COUPON_CODE = "PPP30"; 
 
   useEffect(() => {
     // Capture Facebook Browser IDs for CAPI
@@ -34,7 +29,7 @@ export const LeadCapture: React.FC = () => {
         },
         body: JSON.stringify({ 
           email: email,
-          _subject: "New 30% Off Coupon Request",
+          _subject: "New Newsletter Subscription",
           // Pass these to Formspree so you can send them to CAPI via Zapier/Make
           facebook_fbp: fbp,
           facebook_fbc: fbc
@@ -42,17 +37,16 @@ export const LeadCapture: React.FC = () => {
       });
 
       if (response.ok) {
-        setSubmitted(true);
+        setIsModalOpen(true);
         
         // Fire Facebook Pixel 'Lead' event
         fbq.event('Lead', {
-          content_name: 'Newsletter Coupon',
+          content_name: 'Newsletter Signup',
           currency: 'USD',
           value: 0.00
         });
 
         setEmail('');
-        setShowModal(true);
       } else {
         console.error("Submission failed");
       }
@@ -63,39 +57,23 @@ export const LeadCapture: React.FC = () => {
     }
   };
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(COUPON_CODE);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
-    <section className="bg-slate-900 py-16 border-t border-slate-800 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-center md:text-left max-w-xl">
-            <h3 className="text-white font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
-              <Icons.Star className="text-brand-500 fill-brand-500" />
-              Get 30% off your Pro Plan
-            </h3>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Join our newsletter for self-publishing tips and we'll instantly send you a code for <strong>30% off</strong> your first month of Publish Perfect Pal Pro (monthly plan only).
-            </p>
-          </div>
-          
-          {submitted ? (
-            <div className="w-full md:w-auto bg-slate-800 rounded-xl p-4 border border-green-500/30 flex items-center justify-center gap-3">
-              <div className="bg-green-500/20 p-2 rounded-full text-green-400">
-                <Icons.CheckCircle2 size={24} />
+    <>
+      <section className="bg-slate-900 py-16 border-t border-slate-800 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left max-w-xl">
+              <div className="inline-block mb-4 p-3 bg-white/10 rounded-xl border border-white/10">
+                <Icons.FileText className="text-white h-6 w-6" />
               </div>
-              <div className="text-left">
-                <p className="text-white font-bold text-sm">Code Sent!</p>
-                <p className="text-slate-400 text-xs cursor-pointer hover:text-white transition-colors underline" onClick={() => setShowModal(true)}>
-                  View code again
-                </p>
-              </div>
+              <h3 className="text-white font-bold text-xl md:text-2xl mb-2">
+                Improve Your Book's Visibility and Conversions
+              </h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Join our newsletter for self-publishing tips on Amazon KDP for better visibility and conversions. <strong>No spam, just value.</strong>
+              </p>
             </div>
-          ) : (
+            
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
               {/* Hidden fields for automation tools */}
               <input type="hidden" name="facebook_fbp" value={fbp} />
@@ -116,71 +94,49 @@ export const LeadCapture: React.FC = () => {
                 disabled={isSubmitting}
                 className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-bold transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Sending...' : 'Get 30% Coupon'}
+                {isSubmitting ? 'Subscribing...' : 'Get Publishing Tips'}
               </button>
             </form>
-          )}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Coupon Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm transition-all animate-in fade-in duration-200">
-          {/* Added max-h and overflow for landscape mobile support */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 shadow-2xl relative transform scale-100 transition-all max-h-[90vh] overflow-y-auto">
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div 
+            className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full text-center relative animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button 
-              onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors bg-slate-50 p-1 rounded-full hover:bg-slate-100 sticky z-10"
+              onClick={() => setIsModalOpen(false)} 
+              className="absolute top-3 right-3 text-slate-400 hover:text-slate-600 transition-colors"
+              aria-label="Close modal"
             >
-              <Icons.X size={20} />
+              <Icons.X size={24} />
             </button>
             
-            <div className="text-center mt-2">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Icons.CheckCircle2 className="text-green-600 w-8 h-8" strokeWidth={3} />
-              </div>
-              
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">You're on the list!</h3>
-              <p className="text-slate-600 mb-6">
-                Here is your exclusive coupon code for <strong>30% off</strong> the Pro plan (monthly):
-              </p>
-              
-              <div 
-                className="bg-slate-50 border-2 border-dashed border-brand-200 rounded-xl p-6 mb-6 relative group cursor-pointer hover:border-brand-300 transition-colors" 
-                onClick={copyToClipboard}
-              >
-                <span className="font-mono text-3xl font-black text-brand-600 tracking-wider block mb-2">{COUPON_CODE}</span>
-                <div className="flex items-center justify-center gap-1 text-xs font-bold uppercase tracking-wide">
-                  {copied ? (
-                    <span className="text-green-600 flex items-center gap-1"><Icons.Check size={12} /> Copied to clipboard</span>
-                  ) : (
-                    <span className="text-slate-400 group-hover:text-brand-500 transition-colors">Click to copy</span>
-                  )}
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <button 
-                  onClick={() => {
-                    setShowModal(false);
-                    // Scroll to pricing if not already there
-                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                >
-                  Use Coupon Now
-                </button>
-                <button 
-                  onClick={() => setShowModal(false)}
-                  className="w-full text-slate-500 hover:text-slate-700 font-medium py-2 text-sm"
-                >
-                  Close
-                </button>
-              </div>
+            <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-5 border-4 border-green-200">
+              <Icons.CheckCircle2 className="text-green-600 w-8 h-8" />
             </div>
+            
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Thank you for signing up!</h3>
+            
+            <p className="text-slate-600 leading-relaxed">
+              We promise we won't spam. We will only send you valuable information that can help you in your self-publishing journey.
+            </p>
+
+            <button 
+              onClick={() => setIsModalOpen(false)} 
+              className="mt-6 bg-brand-500 hover:bg-brand-600 text-white font-bold py-2.5 px-8 rounded-lg transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
-    </section>
+    </>
   );
 };
