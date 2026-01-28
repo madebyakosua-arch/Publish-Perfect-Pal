@@ -84,7 +84,7 @@ export const ThankYou: React.FC = () => {
             <div className="bg-slate-100 border border-slate-200 rounded-lg p-4 mb-4">
               <h4 className="font-bold text-slate-800 text-sm flex items-center gap-2"><Icons.CreditCard size={16} className="text-slate-500" /> Billing Information</h4>
               <p className="text-slate-600 text-sm mt-2">
-                Purchase Will Be Reflected as "ClickBank or "CLKBANK*COM if you came through a referral.
+                Note: Your purchase will appear on your statement as "ClickBank" or "CLKBANK*COM" for your Publish Perfect Pal order.
               </p>
             </div>
             <p className="text-xs text-slate-500 leading-relaxed">

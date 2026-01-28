@@ -35,11 +35,11 @@ export const Pricing: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Define your Stripe Links here
+  // Define your ClickBank & Stripe Links here
   const LINKS = {
-    PRO_MONTHLY: "https://buy.stripe.com/14A8wP0nLfY8fqTf0PcAo0n",
+    PRO_MONTHLY: "https://madebyak.pay.clickbank.net/?cbitems=1",
     PRO_YEARLY: "https://buy.stripe.com/6oUbJ12vTfY81A34mbcAo0q",
-    LIFETIME: "https://buy.stripe.com/eVqfZh2vTcLW0vZ9GvcAo0o"
+    LIFETIME: "https://madebyak.pay.clickbank.net/?cbitems=2"
   };
 
   const handleCheckout = (planName: string, value: number, url: string) => {
@@ -50,7 +50,7 @@ export const Pricing: React.FC = () => {
       value: value
     });
     
-    // Proceed to Stripe
+    // Proceed to Checkout
     window.location.href = url;
   };
 
@@ -220,15 +220,15 @@ export const Pricing: React.FC = () => {
         <div className="text-center mb-16 space-y-4">
           <p className="text-slate-500 text-sm font-semibold flex items-center justify-center gap-2">
             <Icons.ShieldCheck className="text-brand-500" size={18} />
-            Secure payment via Stripe • Cancel anytime • No hidden fees
+            Secure payment via ClickBank • Cancel anytime • No hidden fees
           </p>
           
           {/* Payment Logos */}
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-300 pt-4">
             
-            {/* Stripe Logo (Added) */}
-            <div className="font-bold text-2xl tracking-tighter text-[#635BFF] flex items-center pr-2" title="Stripe">
-              stripe
+            {/* ClickBank Logo (Added) */}
+            <div className="font-bold text-2xl tracking-tighter text-slate-800" title="ClickBank">
+              ClickBank
             </div>
 
             {/* Amazon Pay Logo */}

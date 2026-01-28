@@ -101,5 +101,20 @@ export const FAQS: FaqItem[] = [
     id: 7,
     question: "Is Publish Perfect Pal officially affiliated with Amazon KDP?",
     answer: "No. Publish Perfect Pal is an independent software solution designed to assist self-publishers with book formatting. We are not affiliated with, endorsed by, or associated with Amazon.com, Inc. or Kindle Direct Publishing (KDP)."
+  },
+  {
+    id: 8,
+    question: "How are the products of Publish Perfect Pal delivered?",
+    answer: "You will receive immediate access to the software via our website dashboard upon purchase. We will also send an email with your access details for your records."
+  },
+  {
+    id: 9,
+    question: "How do repayments for the software work?",
+    answer: "Payment for the monthly software plan is automatically charged every 30 days. You can cancel your subscription at any time by contacting us at hello@madebyakosua.com."
+  },
+  {
+    id: 10,
+    question: "How can I contact support?",
+    answer: "For Product Support, please contact the seller at hello@madebyakosua.com. For Order Support, including billing questions, please contact ClickBank directly at www.clkbank.com."
   }
 ];
