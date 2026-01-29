@@ -16,7 +16,7 @@ export const StickyCTA: React.FC = () => {
   }, []);
 
   const scrollToBundle = () => {
-    const element = document.getElementById('lifetime-bundle');
+    const element = document.getElementById('all-access-bundle');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {

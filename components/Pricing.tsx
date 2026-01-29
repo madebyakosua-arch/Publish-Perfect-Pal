@@ -128,14 +128,14 @@ export const Pricing: React.FC = () => {
             </ul>
           </div>
 
-          {/* Card 2: Lifetime (Scarcity Added - Brand Match) */}
-          <div id="lifetime-bundle" className="bg-slate-900 rounded-2xl p-6 sm:p-8 border border-brand-500/50 shadow-md text-white relative overflow-hidden group">
+          {/* Card 2: All Access Bundle (Scarcity Added - Brand Match) */}
+          <div id="all-access-bundle" className="bg-slate-900 rounded-2xl p-6 sm:p-8 border border-brand-500/50 shadow-md text-white relative overflow-hidden group">
             {/* Scarcity Watermark/Glow - Orange */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-500/10 blur-3xl rounded-full pointer-events-none"></div>
 
             {/* Title and Badge Container - Flexbox for responsiveness */}
             <div className="flex justify-between items-start gap-2 mb-2 relative z-10">
-               <h3 className="font-bold text-xl text-white">Lifetime Access Bundle</h3>
+               <h3 className="font-bold text-xl text-white">All Access Publish Perfect Pal Bundle</h3>
                <span className="bg-brand-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse whitespace-nowrap shrink-0 mt-1">
                  Limited Time
                </span>
@@ -179,16 +179,16 @@ export const Pricing: React.FC = () => {
             </div>
 
             <button 
-              onClick={() => handleCheckout('Lifetime Bundle', 197.00, LINKS.LIFETIME)}
+              onClick={() => handleCheckout('All Access Bundle', 197.00, LINKS.LIFETIME)}
               className="block w-full text-center bg-white hover:bg-brand-50 text-brand-600 font-bold py-3 rounded-lg mb-6 transition-colors border border-transparent hover:border-brand-200 relative z-10"
             >
-              Get lifetime access
+              Get All Access
             </button>
             <ul className="space-y-3 relative z-10">
               {[
                 "Unlimited Paperback, Hardback & Kindle scans",
                 "All current & future Pro features",
-                "Lifetime product access",
+                "Permanent product access",
                 "VIP Priority Support",
                 "Exclusive beta features",
                 "Private community access"
@@ -208,7 +208,7 @@ export const Pricing: React.FC = () => {
               <div>
                 <h4 className="font-bold text-white text-sm">7-Day Money Back Guarantee</h4>
                 <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                  Not satisfied? Get a full refund on the lifetime bundle within 7 days.
+                  Not satisfied? Get a full refund on the All Access bundle within 7 days.
                 </p>
               </div>
             </div>

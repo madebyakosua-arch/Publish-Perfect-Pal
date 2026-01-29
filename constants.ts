@@ -89,8 +89,8 @@ export const FAQS: FaqItem[] = [
   },
   {
     id: 5,
-    question: "How is 'lifetime' defined?",
-    answer: "The Lifetime Bundle gives you access for the lifetime of the product, including all future Pro updates, without ever paying a monthly fee again."
+    question: "What does 'permanent access' mean?",
+    answer: "The All Access Bundle gives you permanent access to the product for the entire duration of its availability, including all future Pro updates, without ever paying a monthly fee again."
   },
   {
     id: 6,
