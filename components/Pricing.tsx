@@ -38,7 +38,7 @@ export const Pricing: React.FC = () => {
   // Define your ClickBank & Stripe Links here
   const LINKS = {
     PRO_MONTHLY: "https://madebyak.pay.clickbank.net/?cbitems=1",
-    PRO_YEARLY: "https://buy.stripe.com/6oUbJ12vTfY81A34mbcAo0q",
+    PRO_YEARLY: "https://madebyak.pay.clickbank.net/?cbitems=3",
     LIFETIME: "https://madebyak.pay.clickbank.net/?cbitems=2"
   };
 
