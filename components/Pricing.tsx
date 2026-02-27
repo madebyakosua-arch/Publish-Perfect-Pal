@@ -222,6 +222,9 @@ export const Pricing: React.FC = () => {
             <Icons.ShieldCheck className="text-brand-500" size={18} />
             Secure payment via ClickBank • Cancel anytime • No hidden fees
           </p>
+          <p className="text-slate-400 text-xs mt-2">
+            Prices are in USD. The total will automatically convert to your local currency on the secure checkout page.
+          </p>
           
           {/* Payment Logos */}
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-300 pt-4">
