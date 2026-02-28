@@ -78,11 +78,6 @@ export const FAQS: FaqItem[] = [
     answer: "No! Our reports are written in plain language. We don't just say 'transparency flattening error', we tell you 'remove the transparent shadow on page 4'."
   },
   {
-    id: 3,
-    question: "What happens after my free trial ends?",
-    answer: "You can choose to upgrade to a Pro plan to keep scanning, or your account will pause. We keep your data safe in case you want to come back later."
-  },
-  {
     id: 4,
     question: "Can I cancel my subscription?",
     answer: "Yes, absolutely. You can cancel anytime from your account settings with one click, or by emailing us at hello@madebyakosua.com. No phone calls needed."
@@ -115,6 +110,6 @@ export const FAQS: FaqItem[] = [
   {
     id: 10,
     question: "How can I contact support?",
-    answer: "For Product Support, please contact the seller at hello@madebyakosua.com. For Order Support, including billing questions, please contact ClickBank directly at www.clkbank.com."
+    answer: "For Product Support, please contact the seller at hello@madebyakosua.com. For Order Support, including billing questions, please contact Click Bank directly at www.clickbank.com."
   }
 ];

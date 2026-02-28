@@ -7,11 +7,11 @@ export const Pricing: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const { navigateTo } = useNavigation();
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
-  const [spotsLeft, setSpotsLeft] = useState(6);
+  const [spotsLeft, setSpotsLeft] = useState(3);
 
   useEffect(() => {
-    // Scarcity logic: Fixed to 6 spots as requested
-    setSpotsLeft(6);
+    // Scarcity logic: Fixed to 3 spots as requested
+    setSpotsLeft(3);
 
     const calculateTimeLeft = () => {
       const now = new Date();
@@ -208,7 +208,7 @@ export const Pricing: React.FC = () => {
               <div>
                 <h4 className="font-bold text-white text-sm">7-Day Money Back Guarantee</h4>
                 <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                  Not satisfied? Get a full refund on the All Access bundle within 7 days.
+                  Not satisfied? Get a full refund on the All Access bundle within 7 days. <span className="font-bold text-slate-300">This guarantee applies specifically to our All Access Bundle ONLY.</span>
                 </p>
               </div>
             </div>

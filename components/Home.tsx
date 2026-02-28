@@ -8,12 +8,12 @@ import { Benefits } from './Benefits';
 import { HowItWorks } from './HowItWorks';
 import { Features } from './Features';
 import { Pricing } from './Pricing';
+import { BundleGuarantee } from './BundleGuarantee';
 import { FAQ } from './FAQ';
 import { EmotionalClose } from './EmotionalClose';
 import { WithoutWith } from './WithoutWith';
 import { StickyCTA } from './StickyCTA';
 import { ComparisonTable } from './ComparisonTable';
-import { WhyPay } from './WhyPay';
 
 export const Home: React.FC = () => {
   return (
@@ -22,13 +22,13 @@ export const Home: React.FC = () => {
       <LeadCapture />
       <SocialProof />
       <ComparisonTable />
-      <WhyPay />
       <VideoDemo />
       <WithoutWith />
       <Benefits />
       <HowItWorks />
       <Features />
       <Pricing />
+      <BundleGuarantee />
       <FAQ />
       <FounderNote />
       <EmotionalClose />
